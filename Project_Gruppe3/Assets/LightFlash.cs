@@ -1,17 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FlashLight : MonoBehaviour 
+public class LightFlash : MonoBehaviour 
 {
-	public float distance = 10.0f;
-
+	public float distance = -5.0f;
+	
 	void Start()
 	{
-
-		//light1 = GetComponentInChildren<Light>();
-		//light1.enabled = false;
+		
+		//light1 = GetComponentInChilSdren<Light>();
+		//light1.enabled = false;S
 	}
-/*
+	/*
 	void Update()
 	{
 		if(Input.GetKeyDown(KeyCode.F))
@@ -22,13 +22,13 @@ public class FlashLight : MonoBehaviour
 			light1.enabled = false;
 	}
 	*/
-
-
+	
+	
 	void Update () {
 		Vector3 mousePosition = Input.mousePosition;
 		mousePosition.z = distance;
 		transform.position = Camera.main.ScreenToWorldPoint (mousePosition);
 	}
-
-
+	
+	
 }
