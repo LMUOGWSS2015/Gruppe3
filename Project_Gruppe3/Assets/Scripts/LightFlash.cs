@@ -4,6 +4,7 @@ using System.Collections;
 public class LightFlash : MonoBehaviour 
 {
 	public float distance = -5.0f;
+	public static Vector3 lightPosition;
 	
 	void Start()
 	{
@@ -28,6 +29,8 @@ public class LightFlash : MonoBehaviour
 		Vector3 mousePosition = Input.mousePosition;
 		mousePosition.z = distance;
 		transform.position = Camera.main.ScreenToWorldPoint (mousePosition);
+		lightPosition = transform.position;
+
 	}
 	
 	

@@ -3,69 +3,99 @@ using System.Collections;
 
 
 public class AddObject : MonoBehaviour {
+
+	Ray ray;
+	RaycastHit hit;
 	
 	public GameObject[] objectArray;
 	public GameObject randomObject;
 	public float timeLimit;
+	public Vector3[] positions;
+	public bool[] inUse;
+	public int maxAttempt = 9;
 	
-
 	void Start () {
 
 		timeLimit = 10.0f;
-
+		positions = new [] { new Vector3(7f,6f,-2f), new Vector3(7f,-6f,-2f),new Vector3(0f,6f,-2f),new Vector3(0f,-6f,-2f),new Vector3(-7f,6f,-2f),
+			new Vector3(-7f,-6f,-2f),new Vector3(7f,0f,-2f),new Vector3(0f,0f,-2f),new Vector3(-7f,0f,-2f) };
 		objectArray = new GameObject[4];
-		GameObject plane = GameObject.CreatePrimitive(PrimitiveType.Plane);
+		inUse = new bool[9];
+	
+
 		GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-		cube.transform.position = new Vector3(0, 0.5F, 0);
+		cube.transform.position = GetPosition ();
 		GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-		sphere.transform.position = new Vector3(0, 1.5F, 0);
+		sphere.transform.position = GetPosition ();
 		GameObject capsule = GameObject.CreatePrimitive(PrimitiveType.Capsule);
-		capsule.transform.position = new Vector3(2, 1, 0);
+		capsule.transform.position = GetPosition ();
 		GameObject cylinder = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
-		cylinder.transform.position = new Vector3(-2, 1, 0);
+		cylinder.transform.position = GetPosition ();
 		objectArray[0]= cube;
 		objectArray[1]= sphere;
 		objectArray[2]= capsule;
 		objectArray[3]= cylinder;
 		randomObject = objectArray[Random.Range(0,objectArray.Length)];
-		Debug.Log (randomObject);
+		Debug.Log ("Finde:" + randomObject);
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		//Licht trifft auf Objekt + Ist es das gesuchte Objekt ? + Zeit ist noch nicht abgelaufen
+		if (randomObject.name == GetLightedGameObject() && (timeLimit > 0)) {
 
-		if(Input.GetMouseButtonDown (0) && randomObject.name == GetClickedGameObject().name && (timeLimit > 1)){
+			Debug.Log ("Gewonnen!!");
 
-			Debug.Log ("Gewonnen!!" + timeLimit);
-
-		}
-		else if((timeLimit < 1)){
-			Debug.Log("Verloren :(");
-			
 		}
 		else {
 			timeLimit -= Time.deltaTime;
-			Debug.Log (timeLimit);
+		
 
 		}
-
-		
-		
 		
 	}
-	
-	//Method: Get the Object which is clicked
-	GameObject GetClickedGameObject(){
 
-		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-		RaycastHit hit;
-		// Casts the ray and get the first game object hit
-		if (Physics.Raycast(ray, out hit))
-			return hit.transform.gameObject;
+	//random Vergabe der Positionen :)
+	Vector3 GetPosition(){
+
+		int attempt = 0;
+		int index = 0;
+
+		do
+		{	
+			index =  Random.Range(0,positions.Length);
+
+	
+
+		}
+		while(inUse[index] && ++attempt < maxAttempt);
+
+		inUse[index] = true;
+		return positions[index];
+		
+	}
+
+	//Method: Get the Object which is clicked
+	string GetLightedGameObject(){
+		ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+		if(Physics.Raycast(ray, out hit))
+		{	
+				return hit.collider.name;
+		
+		}
 		else
 			return null;
 		
 		
+	}
+
+	//Zeitdisplay in der GUI :) 
+	void OnGUI(){
+		if (timeLimit > 0) {
+			GUI.Label (new Rect (125, 25, 200, 100), "Time Remaining: " + (int)timeLimit);
+		} else {
+			GUI.Label(new Rect(125, 25, 100, 100), "Time is up!");
+		}
 	}
 }
