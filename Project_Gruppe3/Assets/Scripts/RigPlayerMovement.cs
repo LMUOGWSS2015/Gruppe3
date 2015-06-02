@@ -308,7 +308,7 @@ public class RigPlayerMovement : MonoBehaviour
 	void Update ()
 	{
 		// Cache the input
-		if (Input.GetButtonDown ("Jump"))
+		if (Input.GetMouseButtonDown (0))
 			jumpFlag = true;
 		if (Input.GetMouseButtonDown (1)) {
 			ShootWithWater (bulletDistance);
