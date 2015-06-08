@@ -4,7 +4,8 @@ using System.Collections;
 public class CatGeneration : MonoBehaviour {
 
 	public GameObject[] flyingCats;
-	private Vector3 movement = Vector3.left * 0.1f;
+	private Vector3 movementV = Vector3.left * 0.1f;
+	private Vector3 movementH = Vector3.up * 0.1f;
 
 	// Use this for initialization
 	void Start () {
@@ -21,13 +22,19 @@ public class CatGeneration : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (transform.position.x > 1)
-			movement = Vector3.left * 0.1f;
 
-		else if (transform.position.x < -1)
-			movement = Vector3.right * 0.1f;
+		if (transform.position.x > 20) {
+			movementV = Vector3.left * 0.1f;
+			movementH = Vector3.up * 0.1f;
+
+		} else if (transform.position.x < -20) {
+			movementV = Vector3.right * 0.1f;
+			movementH = Vector3.down * 0.1f;
+
+		}
 		
-		transform.Translate(movement);
+		transform.Translate(movementV);
+		transform.Translate(movementH);
 
 	}
 }
