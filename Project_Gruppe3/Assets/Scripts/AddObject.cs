@@ -13,31 +13,78 @@ public class AddObject : MonoBehaviour {
 	public Vector3[] positions;
 	public bool[] inUse;
 	public int maxAttempt = 9;
-	
+	private int currentScale = 2; 
+
 	void Start () {
 
 		timeLimit = 10.0f;
-		positions = new [] { new Vector3(7f,6f,-2f), new Vector3(7f,-6f,-2f),new Vector3(0f,6f,-2f),new Vector3(0f,-6f,-2f),new Vector3(-7f,6f,-2f),
-			new Vector3(-7f,-6f,-2f),new Vector3(7f,0f,-2f),new Vector3(0f,0f,-2f),new Vector3(-7f,0f,-2f) };
-		objectArray = new GameObject[4];
+
+		//Definition of object position
+		positions = new [] { new Vector3(-7f,14f,8f), new Vector3(0f,14f,8f),new Vector3(7f,14f,8f),new Vector3(-7f,8f,8f),new Vector3(0f,8f,8f),
+			new Vector3(7f,8f,8f),new Vector3(-7f,2f,8f),new Vector3(0f,2f,8f),new Vector3(7f,2f,8f) };
+		objectArray = new GameObject[9];
 		inUse = new bool[9];
 	
+		//Adding objects
+		GameObject cube1 = GameObject.CreatePrimitive(PrimitiveType.Cube);
+		cube1.transform.position = GetPosition ();
+		cube1.transform.parent = GameObject.Find ("Search Objects").transform; 
+		cube1.transform.localScale = new Vector3 (currentScale, currentScale, currentScale); 
 
-		GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-		cube.transform.position = GetPosition ();
-		GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-		sphere.transform.position = GetPosition ();
-		GameObject capsule = GameObject.CreatePrimitive(PrimitiveType.Capsule);
-		capsule.transform.position = GetPosition ();
-		GameObject cylinder = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
-		cylinder.transform.position = GetPosition ();
-		objectArray[0]= cube;
-		objectArray[1]= sphere;
-		objectArray[2]= capsule;
-		objectArray[3]= cylinder;
+		GameObject cube2 = GameObject.CreatePrimitive(PrimitiveType.Cube);
+		cube2.transform.position = GetPosition ();
+		cube2.transform.parent = GameObject.Find ("Search Objects").transform; 
+		cube2.transform.localScale = new Vector3 (currentScale, currentScale, currentScale); 
+
+		GameObject cube3 = GameObject.CreatePrimitive(PrimitiveType.Cube);
+		cube3.transform.position = GetPosition ();
+		cube3.transform.parent = GameObject.Find ("Search Objects").transform; 
+		cube3.transform.localScale = new Vector3 (currentScale, currentScale, currentScale); 
+
+		GameObject cube4 = GameObject.CreatePrimitive(PrimitiveType.Cube);
+		cube4.transform.position = GetPosition ();
+		cube4.transform.parent = GameObject.Find ("Search Objects").transform; 
+		cube4.transform.localScale = new Vector3 (currentScale, currentScale, currentScale); 
+
+		GameObject cube5 = GameObject.CreatePrimitive(PrimitiveType.Cube);
+		cube5.transform.position = GetPosition ();
+		cube5.transform.parent = GameObject.Find ("Search Objects").transform; 
+		cube5.transform.localScale = new Vector3 (currentScale, currentScale, currentScale); 
+
+		GameObject cube6 = GameObject.CreatePrimitive(PrimitiveType.Cube);
+		cube6.transform.position = GetPosition ();
+		cube6.transform.parent = GameObject.Find ("Search Objects").transform; 
+		cube6.transform.localScale = new Vector3 (currentScale, currentScale, currentScale); 
+
+		GameObject cube7 = GameObject.CreatePrimitive(PrimitiveType.Cube);
+		cube7.transform.position = GetPosition ();
+		cube7.transform.parent = GameObject.Find ("Search Objects").transform; 
+		cube7.transform.localScale = new Vector3 (currentScale, currentScale, currentScale); 
+
+		GameObject cube8 = GameObject.CreatePrimitive(PrimitiveType.Cube);
+		cube8.transform.position = GetPosition ();
+		cube8.transform.parent = GameObject.Find ("Search Objects").transform; 
+		cube8.transform.localScale = new Vector3 (currentScale, currentScale, currentScale); 
+
+		GameObject cube9 = GameObject.CreatePrimitive(PrimitiveType.Cube);
+		cube9.transform.position = GetPosition ();
+		cube9.transform.parent = GameObject.Find ("Search Objects").transform; 
+		cube9.transform.localScale = new Vector3 (currentScale, currentScale, currentScale); 
+
+		//Adding objects to array
+		objectArray[0]= cube1;
+		objectArray[1]= cube2;
+		objectArray[2]= cube3;
+		objectArray[3]= cube4;
+		objectArray[4]= cube5;
+		objectArray[5]= cube6;
+		objectArray[6]= cube7;
+		objectArray[7]= cube8;
+		objectArray[8]= cube9;
+
+		//Creating random objects
 		randomObject = objectArray[Random.Range(0,objectArray.Length)];
 		Debug.Log ("Finde:" + randomObject);
-
 	}
 	
 	// Update is called once per frame
@@ -53,7 +100,7 @@ public class AddObject : MonoBehaviour {
 		
 
 		}
-		
+
 	}
 
 	//random Vergabe der Positionen :)
