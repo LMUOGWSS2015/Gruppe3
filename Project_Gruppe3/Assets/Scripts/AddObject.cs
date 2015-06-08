@@ -128,6 +128,8 @@ public class AddObject : MonoBehaviour {
 		ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		if(Physics.Raycast(ray, out hit))
 		{	
+			//Debug.Log("Zentrum GameObj:" + hit.collider.gameObject.transform.position);
+			//Debug.Log("MousePosition:" + Input.mousePosition);
 				return hit.collider.name;
 		
 		}
@@ -137,6 +139,21 @@ public class AddObject : MonoBehaviour {
 		
 	}
 
+	/*bool IsNearItem()
+	{
+		RaycastHit hit;
+		foreach (GameObject item in objectArray)
+		{
+			if (Vector3.Distance(transform.position, item.transform.position) < 1.5f)
+				Debug.Log(transform.position);
+			Debug.Log(item.transform.position);
+				return true;
+		}
+		
+		return false;
+	}*/
+
+	
 	//Zeitdisplay in der GUI :) 
 	void OnGUI(){
 		if (timeLimit > 0) {
