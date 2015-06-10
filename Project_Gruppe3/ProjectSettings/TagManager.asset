@@ -4,7 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< Updated upstream
   - waterDrop
+=======
+  - EnemySpawnPoint
+  - SphereTrigger
+  - SphereTag
+  - BallOfWool
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
