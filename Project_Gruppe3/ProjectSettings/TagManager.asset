@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - New Tag
+  - waterDrop
+  - SphereTrigger
+  - SphereTag
+  - pug
+  - score
   layers:
   - Default
   - TransparentFX

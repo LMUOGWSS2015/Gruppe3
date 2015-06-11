@@ -278,6 +278,8 @@ public class RigPlayerMovement : MonoBehaviour
 	//Bullet-Sphere-Object
 	public GameObject bulletSphere;
 	public float bulletDistance;
+
+	public int helmet = 0;
 	
 	#endregion
 
@@ -354,6 +356,9 @@ public class RigPlayerMovement : MonoBehaviour
 
 			GetComponent<Rigidbody> ().AddForce (velocityChange, ForceMode.VelocityChange);
 		}
+		if (helmet > 0) {
+			Debug.Log (helmet);
+		}
 	}
 
 	void  ShootWithWater (float sphereDistance)
@@ -362,7 +367,8 @@ public class RigPlayerMovement : MonoBehaviour
 		Vector3 startPosition = new Vector3 (transform.position.x+0.01F,
 		                                     transform.position.y+5.2F,
 					                                   transform.position.z);
-		Vector3 velocityChangeForShot = 1.02f*(startPosition);
+
+		Vector3 velocityChangeForShot = 1.01F*(startPosition);
 
 
 		// spawn 1 kugel
