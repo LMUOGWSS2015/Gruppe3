@@ -4,7 +4,6 @@ using iView;
 
 public class LightFlash : GazeMonobehaviour{
 	public float distance = 25.0f;
-	public Vector3 center;
 	public float offsetDistance = 0.25f;
 	
 	

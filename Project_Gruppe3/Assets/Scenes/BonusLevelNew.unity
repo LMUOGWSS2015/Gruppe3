@@ -729,6 +729,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSelectable: 1
   distance: 1
+  offsetDistance: .25
 --- !u!108 &1767322859
 Light:
   m_ObjectHideFlags: 0
@@ -737,10 +738,10 @@ Light:
   m_GameObject: {fileID: 1767322857}
   m_Enabled: 1
   serializedVersion: 6
-  m_Type: 0
+  m_Type: 2
   m_Color: {r: 1, g: .956862748, b: .839215696, a: 1}
   m_Intensity: 8
-  m_Range: 50
+  m_Range: 10
   m_SpotAngle: 15
   m_CookieSize: 10
   m_Shadows:
