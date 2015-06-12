@@ -15,7 +15,7 @@ GameObject:
   - 54: {fileID: 5435584}
   m_Layer: 0
   m_Name: DogsBone
-  m_TagString: waterDrop
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
