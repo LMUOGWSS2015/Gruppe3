@@ -8,6 +8,7 @@ public class DetectCollision : MonoBehaviour {
 	void Update () {
 
 		timeLimit -= Time.deltaTime;
+		Debug.Log ("sdf");
 	}
 
 	void OnCollisionEnter(Collision col){
@@ -24,6 +25,7 @@ public class DetectCollision : MonoBehaviour {
 		//TODO
 		//detect collision with cats
 		else if (col.gameObject.name == "Cats") {
+			Debug.Log ("Hallo");
 			//reset scene
 			ResetScene(); 
 			//TODO

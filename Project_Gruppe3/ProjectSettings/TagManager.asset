@@ -3,13 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - New Tag
-  - waterDrop
-  - SphereTrigger
-  - SphereTag
-  - pug
-  - score
+  tags: []
   layers:
   - Default
   - TransparentFX
