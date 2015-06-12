@@ -128,8 +128,10 @@ public class AddObject : MonoBehaviour {
 		ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		if(Physics.Raycast(ray, out hit))
 		{
-			if(Vector3.Distance(hit.point,transform.position) <10){
-				return hit.collider.name;
+			foreach(GameObject obj in objectArray){
+				if(Vector3.Distance(hit.point,obj.transform.position) <1.3){
+					return hit.collider.name;
+				}
 			}
 			return null;
 		}
