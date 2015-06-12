@@ -12,7 +12,7 @@ public class PickUP : MonoBehaviour
 	{
 		if(other.tag == "pug")
 		{
-			GameObject.FindGameObjectWithTag("score").GetComponent<Score>().helmets++;
+			GameObject.FindGameObjectWithTag("score").GetComponent<PugLife>().increaseLife();
 			Destroy(this.gameObject);
 		}
 	}
