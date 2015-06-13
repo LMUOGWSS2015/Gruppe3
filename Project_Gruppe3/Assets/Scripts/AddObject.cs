@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using iView;
 
 
-public class AddObject : MonoBehaviour {
+public class AddObject : GazeMonobehaviour {
 
 	Ray ray;
 	RaycastHit hit;
@@ -14,6 +15,8 @@ public class AddObject : MonoBehaviour {
 	public bool[] inUse;
 	public int maxAttempt = 9;
 	private int currentScale = 2; 
+	public Vector3 gazePosition;
+	
 
 	void Start () {
 
@@ -89,11 +92,18 @@ public class AddObject : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		gazePosition = SMIGazeController.Instance.GetSample ().averagedEye.gazePosInUnityScreenCoords ();
+
 		//Licht trifft auf Objekt + Ist es das gesuchte Objekt ? + Zeit ist noch nicht abgelaufen
-		if (randomObject.name == GetLightedGameObject() && (timeLimit > 0)) {
+		if (randomObject.name == GetLightedGameObjectMouse() && (timeLimit > 0)) {
 
 			Debug.Log ("Gewonnen!!");
 
+		}
+		else if(randomObject.name == GetLightedGameObjectEyes() && (timeLimit >0)){
+
+			Debug.Log ("Gewonnen!!");
 		}
 		else {
 			timeLimit -= Time.deltaTime;
@@ -123,26 +133,38 @@ public class AddObject : MonoBehaviour {
 		
 	}
 
-	//Method: Get the Object which is clicked
-	string GetLightedGameObject(){
-		ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-		if(Physics.Raycast(ray, out hit))
-		{
-			foreach(GameObject obj in objectArray){
-				if(Vector3.Distance(hit.point,obj.transform.position) <1.3){
+	//Method: Get the Object which is hovered
+	string GetLightedGameObjectMouse(){
+		ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+		if (Physics.Raycast (ray, out hit)) {
+			foreach (GameObject obj in objectArray) {
+
+				if (Vector3.Distance (hit.point, obj.transform.position) < 1.1) {
 					return hit.collider.name;
 				}
 			}
 			return null;
-		}
-		else
+		} else
 			return null;
-		
 		
 	}
 
+	//Method: Get the Object which is clicked
+	string GetLightedGameObjectEyes(){
+		ray = Camera.main.ScreenPointToRay (gazePosition);
+		if (Physics.Raycast (ray, out hit)) {
+			foreach (GameObject obj in objectArray) {
+				
+				if (Vector3.Distance (hit.point, obj.transform.position) < 1.1) {
+					return hit.collider.name;
+				}
+			}
+			return null;
+		} else
+			return null;
+		
+	}
 
-	
 	//Zeitdisplay in der GUI :) 
 	void OnGUI(){
 		if (timeLimit > 0) {
