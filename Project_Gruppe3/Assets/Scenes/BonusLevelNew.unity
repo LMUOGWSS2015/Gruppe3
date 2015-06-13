@@ -548,12 +548,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c08f0cd2e8cd4bb6beec35d130f65dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSelectable: 1
   objectArray: []
   randomObject: {fileID: 0}
   timeLimit: 0
   positions: []
   inUse: 
   maxAttempt: 9
+  gazePosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1548078999
 GameObject:
   m_ObjectHideFlags: 0

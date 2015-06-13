@@ -28,20 +28,25 @@ public class LightFlash : GazeMonobehaviour{
 		if(Physics.Raycast(ray, out hit)){
 			transform.position = hit.point + hit.normal * offsetDistance;
 
-	
-		
 		}
-	
-		/*RayCastHit hit;
-		if (Physics.Raycast(ray, out hit, 100)) {
-			Instantiate(item, hit.point, Quaternion.identity);
-		}*/
-		
+
 		/*Vector3 gazePosition = SMIGazeController.Instance.GetSample ().averagedEye.gazePosInUnityScreenCoords ();
 		gazePosition.z = distance;
 		transform.position = Camera.main.ScreenToWorldPoint(gazePosition);
 		//Debug.Log("Gaze Position: " + gazePosition);*/
 
+		/*NEW GAZE*/
+
+
+		/*Vector3 gazePosition = SMIGazeController.Instance.GetSample ().averagedEye.gazePosInUnityScreenCoords ();
+		 * Ray ray = Camera.main.ScreenPointToRay(gazePosition);
+		RaycastHit hit;
+		
+		if(Physics.Raycast(ray, out hit)){
+			transform.position = hit.point + hit.normal * offsetDistance;
+
+		}
+		 */
 		
 	}
 	
