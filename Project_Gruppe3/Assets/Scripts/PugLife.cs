@@ -32,7 +32,7 @@ public class PugLife : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if(helmets==0)
+		if(helmets == 0)
 		{
 			Debug.Log ("Game Over!");
 			anim.SetTrigger("IsGameOver");
@@ -41,11 +41,9 @@ public class PugLife : MonoBehaviour {
 			
 			if(restartTimer >= restartDelay)
 			{
-				Application.LoadLevel(Application.loadedLevel);
+				Application.LoadLevel("Menu");
 			}
-			
 		}
-	}
-	
-	}
+	}	
+}
 

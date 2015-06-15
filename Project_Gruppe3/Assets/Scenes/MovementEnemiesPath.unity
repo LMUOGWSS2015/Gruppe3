@@ -336,6 +336,7 @@ MonoBehaviour:
   canRun: 1
   bulletSphere: {fileID: 0}
   bulletDistance: 0
+  helmet: 0
 --- !u!54 &305086053
 Rigidbody:
   m_ObjectHideFlags: 0
