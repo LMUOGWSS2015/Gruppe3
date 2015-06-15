@@ -23,8 +23,8 @@ public class AddObject : GazeMonobehaviour {
 		timeLimit = 10.0f;
 
 		//Definition of object position
-		positions = new [] { new Vector3(-7f,14f,8f), new Vector3(0f,14f,8f),new Vector3(7f,14f,8f),new Vector3(-7f,8f,8f),new Vector3(0f,8f,8f),
-			new Vector3(7f,8f,8f),new Vector3(-7f,2f,8f),new Vector3(0f,2f,8f),new Vector3(7f,2f,8f) };
+		positions = new [] { new Vector3(-7f,14f,10f), new Vector3(0f,14f,10f),new Vector3(7f,14f,10f),new Vector3(-7f,8f,10f),new Vector3(0f,8f,10f),
+			new Vector3(7f,8f,10f),new Vector3(-7f,2f,10f),new Vector3(0f,2f,10f),new Vector3(7f,2f,10f) };
 		objectArray = new GameObject[9];
 		inUse = new bool[9];
 	
@@ -32,47 +32,47 @@ public class AddObject : GazeMonobehaviour {
 		GameObject cube1 = GameObject.CreatePrimitive(PrimitiveType.Cube);
 		cube1.transform.position = GetPosition ();
 		cube1.transform.parent = GameObject.Find ("Search Objects").transform; 
-		cube1.transform.localScale = new Vector3 (currentScale, currentScale, currentScale); 
+		cube1.transform.localScale = new Vector3 (currentScale, currentScale, 0.01f); 
 
 		GameObject cube2 = GameObject.CreatePrimitive(PrimitiveType.Cube);
 		cube2.transform.position = GetPosition ();
 		cube2.transform.parent = GameObject.Find ("Search Objects").transform; 
-		cube2.transform.localScale = new Vector3 (currentScale, currentScale, currentScale); 
+		cube2.transform.localScale = new Vector3 (currentScale, currentScale, 0.01f); 
 
 		GameObject cube3 = GameObject.CreatePrimitive(PrimitiveType.Cube);
 		cube3.transform.position = GetPosition ();
 		cube3.transform.parent = GameObject.Find ("Search Objects").transform; 
-		cube3.transform.localScale = new Vector3 (currentScale, currentScale, currentScale); 
+		cube3.transform.localScale = new Vector3 (currentScale, currentScale, 0.01f); 
 
 		GameObject cube4 = GameObject.CreatePrimitive(PrimitiveType.Cube);
 		cube4.transform.position = GetPosition ();
 		cube4.transform.parent = GameObject.Find ("Search Objects").transform; 
-		cube4.transform.localScale = new Vector3 (currentScale, currentScale, currentScale); 
+		cube4.transform.localScale = new Vector3 (currentScale, currentScale, 0.01f); 
 
 		GameObject cube5 = GameObject.CreatePrimitive(PrimitiveType.Cube);
 		cube5.transform.position = GetPosition ();
 		cube5.transform.parent = GameObject.Find ("Search Objects").transform; 
-		cube5.transform.localScale = new Vector3 (currentScale, currentScale, currentScale); 
+		cube5.transform.localScale = new Vector3 (currentScale, currentScale, 0.01f); 
 
 		GameObject cube6 = GameObject.CreatePrimitive(PrimitiveType.Cube);
 		cube6.transform.position = GetPosition ();
 		cube6.transform.parent = GameObject.Find ("Search Objects").transform; 
-		cube6.transform.localScale = new Vector3 (currentScale, currentScale, currentScale); 
+		cube6.transform.localScale = new Vector3 (currentScale, currentScale, 0.01f); 
 
 		GameObject cube7 = GameObject.CreatePrimitive(PrimitiveType.Cube);
 		cube7.transform.position = GetPosition ();
 		cube7.transform.parent = GameObject.Find ("Search Objects").transform; 
-		cube7.transform.localScale = new Vector3 (currentScale, currentScale, currentScale); 
+		cube7.transform.localScale = new Vector3 (currentScale, currentScale, 0.01f); 
 
 		GameObject cube8 = GameObject.CreatePrimitive(PrimitiveType.Cube);
 		cube8.transform.position = GetPosition ();
 		cube8.transform.parent = GameObject.Find ("Search Objects").transform; 
-		cube8.transform.localScale = new Vector3 (currentScale, currentScale, currentScale); 
+		cube8.transform.localScale = new Vector3 (currentScale, currentScale, 0.01f); 
 
 		GameObject cube9 = GameObject.CreatePrimitive(PrimitiveType.Cube);
 		cube9.transform.position = GetPosition ();
 		cube9.transform.parent = GameObject.Find ("Search Objects").transform; 
-		cube9.transform.localScale = new Vector3 (currentScale, currentScale, currentScale); 
+		cube9.transform.localScale = new Vector3 (currentScale, currentScale, 0.01f); 
 
 		//Adding objects to array
 		objectArray[0]= cube1;

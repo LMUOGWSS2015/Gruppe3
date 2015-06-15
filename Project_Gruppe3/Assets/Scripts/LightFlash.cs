@@ -3,14 +3,18 @@ using System.Collections;
 using iView;
 
 public class LightFlash : GazeMonobehaviour{
-	public float distance = 25.0f;
-	public float offsetDistance = 0.25f;
+	public float distance = 10.0f;
+	public float offsetDistance =10.0f;
 	
-	
+	int calibrationType = 3;
+
 	void Start()
 	{
 		Cursor.visible = false;
-
+		// Start a calibration
+		//SMIGazeController.Instance.StartCalibration(calibrationType);
+		// Start a validation
+		//SMIGazeController.Instance.StartValidation();
 	}
 	
 	
@@ -37,16 +41,16 @@ public class LightFlash : GazeMonobehaviour{
 
 		/*NEW GAZE*/
 
-
-		/*Vector3 gazePosition = SMIGazeController.Instance.GetSample ().averagedEye.gazePosInUnityScreenCoords ();
-		 * Ray ray = Camera.main.ScreenPointToRay(gazePosition);
+/*
+		Vector3 gazePosition = SMIGazeController.Instance.GetSample ().averagedEye.gazePosInUnityScreenCoords ();
+		Ray ray = Camera.main.ScreenPointToRay(gazePosition);
 		RaycastHit hit;
 		
 		if(Physics.Raycast(ray, out hit)){
 			transform.position = hit.point + hit.normal * offsetDistance;
 
 		}
-		 */
+*/		 
 		
 	}
 	
