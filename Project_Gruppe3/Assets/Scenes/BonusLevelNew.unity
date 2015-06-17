@@ -731,9 +731,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 737d0c05f30453245bb16a95edf31a88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSelectable: 0
-  distance: 1
-  offsetDistance: 1
+  isSelectable: 1
+  distance: 10
+  offsetDistance: 10
 --- !u!108 &1767322859
 Light:
   m_ObjectHideFlags: 0
