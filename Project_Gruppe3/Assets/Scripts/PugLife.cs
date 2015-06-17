@@ -5,8 +5,9 @@ public class PugLife : MonoBehaviour {
 
 	public GameObject Player;
 	public int helmets;
-	private Animator anim;
 	public float restartDelay = 3f;
+
+	private Animator anim;
 	private float restartTimer;
 
 	// Use this for initialization
@@ -14,11 +15,11 @@ public class PugLife : MonoBehaviour {
 	
 	}
 
-	public void increaseLife(){
+	public void IncreaseLife(){
 		helmets += 1;
 	}
 
-	public void decreaseLife(){
+	public void DecreaseLife(){
 		helmets -= 1;
 	}
 

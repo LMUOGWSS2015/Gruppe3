@@ -9,7 +9,7 @@ public class Helmet : MonoBehaviour
 	{
 		if(coll.tag == "pug")
 		{
-			GameObject.FindGameObjectWithTag("pug").GetComponent<PugLife>().increaseLife();
+			GameObject.FindGameObjectWithTag("pug").GetComponent<PugLife>().IncreaseLife();
 				Destroy(this.gameObject);
 			}
 		}

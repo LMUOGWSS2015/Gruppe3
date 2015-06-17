@@ -3,8 +3,8 @@ using System.Collections;
 
 public class MenuManagerScript : MonoBehaviour {
 
-	public void StartGame()
-	{
-		Application.LoadLevel("Ina");
+	public void StartGame(){
+
+		Application.LoadLevel("Level1");
 	}
 }

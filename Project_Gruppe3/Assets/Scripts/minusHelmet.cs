@@ -10,7 +10,7 @@ public class minusHelmet : MonoBehaviour {
 	{
 		if(coll.tag == "pug")
 		{
-			GameObject.FindGameObjectWithTag("pug").GetComponent<PugLife>().decreaseLife();
+			GameObject.FindGameObjectWithTag("pug").GetComponent<PugLife>().DecreaseLife();
 			Destroy(this.gameObject);
 		}
 	}

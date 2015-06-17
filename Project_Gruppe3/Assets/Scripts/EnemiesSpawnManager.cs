@@ -8,9 +8,6 @@ public class EnemiesSpawnManager : MonoBehaviour {
 	public GameObject newEnemy;
 	public GameObject player;
 
-	//TEST
-	public Health health;
-
 	#endregion
 
 
@@ -34,8 +31,7 @@ public class EnemiesSpawnManager : MonoBehaviour {
 			//Debug.Log (distance);
 
 			if (distance < 10f){
-				health.AddHearts(1);
-
+			
 				CreateEnemy ();
 
 				// Disablin the spawning point ('Destroy' didnt work)
@@ -55,7 +51,7 @@ public class EnemiesSpawnManager : MonoBehaviour {
 
 		// Creatin enemy infront of the player's view
 		Instantiate(newEnemy, 
-		            player.transform.position + player.transform.forward * 80f,
+		            player.transform.position + player.transform.forward * 40f,
 		            new Quaternion( 0.0f, player.transform.rotation.y, 0.0f, player.transform.rotation.w));
 	}
 
