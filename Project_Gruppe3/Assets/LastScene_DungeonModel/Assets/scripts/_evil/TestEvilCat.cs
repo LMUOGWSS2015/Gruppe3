@@ -30,9 +30,7 @@ public class TestEvilCat : MonoBehaviour
 		//text.text = "insert some text here"; 
 		
 		Slider slider = healthBarSlider.GetComponent<Slider> ();
-		Debug.Log("Where's the Slider?");
 		if(obj.gameObject.tag=="Projectile" && slider.value>0){
-			Debug.Log("Slider detected");
 			slider.value -=10f;  //reduce health
 		}
 		else{
