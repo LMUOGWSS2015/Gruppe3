@@ -32,9 +32,6 @@ public class UITexter : MonoBehaviour {
 		
 		uITotalScore.text = "Score: " + HoldInformations.GetScore ().ToString ();
 		uIHelmetScore.text = "Helmets: " + HoldInformations.GetLife ().ToString ();		
-		Debug.Log(HoldInformations.GetLife ().ToString ());
-		
-		
 	}
 
 	#endregion

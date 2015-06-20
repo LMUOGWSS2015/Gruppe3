@@ -5,13 +5,12 @@ public class DogsBone : MonoBehaviour
 {
 	#region Variables (public)
 
-	//public float speedForTheThrowUp;
+	public float speedForTheThrowUp;
 	public float destroySeconds;
 	public float bounceSpeed;
 	public float bounce;
 	public bool isJumping=true;
 	public int counter;
-	public int scores = 0; 
 
 	#endregion
 
@@ -35,7 +34,6 @@ public class DogsBone : MonoBehaviour
 		
 		//destroy object after x seconds
 		Destroy (this.gameObject, destroySeconds);
-		scores = GameObject.FindGameObjectWithTag ("pug").GetComponent<Score> ().score;
 	
 	}
 	
@@ -56,9 +54,8 @@ public class DogsBone : MonoBehaviour
 		if (coll.tag == "pug") {
 			// if bullet collides with anything, destroy it
 			Destroy (this.gameObject);
-			GameObject.FindGameObjectWithTag("pug").GetComponent<Score>().score += 100;
-			//scores += 100;
-			HoldInformations.SetScore(GameObject.FindGameObjectWithTag("pug").GetComponent<Score>().score );
+			GameObject.FindGameObjectWithTag("pug").GetComponent<Score>().score+=100;
+			HoldInformations.SetScore(GameObject.FindGameObjectWithTag("pug").GetComponent<Score>().score);
 		}
 	}
 

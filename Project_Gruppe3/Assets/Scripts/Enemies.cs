@@ -17,15 +17,6 @@ public class Enemies : MonoBehaviour {
 	#endregion
 
 
-	#region Unity event functions
-
-	void Update(){
-		//if()
-	}
-
-	#endregion
-
-
 	#region Methods
 
 	void OnCollisionEnter (Collision col){
@@ -53,7 +44,10 @@ public class Enemies : MonoBehaviour {
 			// run destruction function
 			Destroy (this.gameObject);
 			SpawnDogBones ();
+	
+			// Adding score points for killing an enemy
 			GameObject.FindGameObjectWithTag ("pug").GetComponent<Score> ().score += 100;
+			HoldInformations.SetScore(GameObject.FindGameObjectWithTag ("pug").GetComponent<Score> ().score);
 			
 		} else {
 			//do nothing

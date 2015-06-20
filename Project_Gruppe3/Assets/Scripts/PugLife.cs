@@ -30,8 +30,7 @@ public class PugLife : MonoBehaviour {
 	public void IncreaseLife(){
 		helmets += 1;
 		HoldInformations.SetLife (helmets);
-		Debug.Log("Puglife setlife" + helmets);
-		
+		//Debug.Log("Puglife setlife" + helmets);
 	}
 	
 	public void DecreaseLife(){
