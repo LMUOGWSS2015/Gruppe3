@@ -10,7 +10,7 @@ public class LoadNextLevel : MonoBehaviour {
 			Debug.Log("NextLevel_Collision");
 			Destroy(gameObject);
 
-			Application.LoadLevel("Menu");
+			Application.LoadLevel("CatapultScene");
 		
 		}
 	}

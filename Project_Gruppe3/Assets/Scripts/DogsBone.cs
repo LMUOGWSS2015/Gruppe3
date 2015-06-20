@@ -3,15 +3,27 @@ using System.Collections;
 
 public class DogsBone : MonoBehaviour
 {
+	#region Variables (public)
 
-	public float speedForTheThrowUp;
+	//public float speedForTheThrowUp;
 	public float destroySeconds;
-	private Rigidbody rigid;
 	public float bounceSpeed;
 	public float bounce;
 	public bool isJumping=true;
 	public int counter;
+	public int scores = 0; 
 
+	#endregion
+
+
+	#region Variables (private)
+
+	private Rigidbody rigid;
+
+	#endregion
+
+
+	#region Unity event functions
 
 	// Use this for initialization
 	void Start ()
@@ -23,6 +35,7 @@ public class DogsBone : MonoBehaviour
 		
 		//destroy object after x seconds
 		Destroy (this.gameObject, destroySeconds);
+		scores = GameObject.FindGameObjectWithTag ("pug").GetComponent<Score> ().score;
 	
 	}
 	
@@ -43,21 +56,28 @@ public class DogsBone : MonoBehaviour
 		if (coll.tag == "pug") {
 			// if bullet collides with anything, destroy it
 			Destroy (this.gameObject);
-			GameObject.FindGameObjectWithTag("pug").GetComponent<Score>().score+=100;
+			GameObject.FindGameObjectWithTag("pug").GetComponent<Score>().score += 100;
+			//scores += 100;
+			HoldInformations.SetScore(GameObject.FindGameObjectWithTag("pug").GetComponent<Score>().score );
 		}
 	}
+
+	#endregion
+
+
+	#region Methods
 
 	void MoveUpAndDown(){
 		//Debug.Log (rigid.position.y);
 
-
-	
-
-			float bounceY = rigid.position.y + bounce * Mathf.Sin (bounceSpeed * Time.deltaTime);
-			rigid.position = new Vector3 (rigid.position.x,
-		                           Mathf.Clamp (bounceY, 1, 4),
-		                           rigid.position.z);
-		}
-	
+		float bounceY = rigid.position.y + bounce * Mathf.Sin (bounceSpeed * Time.deltaTime);
+		rigid.position = new Vector3 (rigid.position.x,
+	                           Mathf.Clamp (bounceY, 1, 4),
+	                           rigid.position.z);
 	}
+
+	#endregion
+}
+
+
 
