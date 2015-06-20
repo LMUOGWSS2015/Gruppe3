@@ -12,7 +12,7 @@ GameObject:
   - 135: {fileID: 13505348}
   - 23: {fileID: 2359046}
   - 114: {fileID: 11434092}
-  - 54: {fileID: 5468074}
+  - 54: {fileID: 5437810}
   m_Layer: 0
   m_Name: BulletSphere
   m_TagString: waterDrop
@@ -63,7 +63,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126118}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &5468074
+--- !u!54 &5437810
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

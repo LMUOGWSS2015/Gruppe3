@@ -30,22 +30,27 @@ public class Enemies : MonoBehaviour {
 			GameObject.FindGameObjectWithTag("pug").GetComponent<PugLife>().DecreaseLife();
 		}
 
+			
+			/*ContactPoint contact = col.contacts [0];
+			//startPosition = contact.point;
+			Debug.Log (startPosition.ToString () + col.gameObject.ToString ());
+			Debug.Log (col.gameObject.ToString ());*/
 
-		ContactPoint contact = col.contacts [0];
-		startPosition = contact.point;
-		Debug.Log (startPosition.ToString () + col.gameObject.ToString ());
-		Debug.Log (col.gameObject.ToString ());
 	}
 
 	void OnTriggerEnter (Collider coll){
+
+
 		
 		// if Enemy collides with the Bullet (waterDrop), destroy it itself
 		if (coll.gameObject.tag == "waterDrop") {
+
+			startPosition = coll.transform.position;
 			// run destruction function
 			Destroy (this.gameObject);
 			SpawnDogBones ();
 	
-			// Adding score points for killing an enemy
+			// Adding score points for killing an enemies
 			GameObject.FindGameObjectWithTag ("pug").GetComponent<Score> ().score += 100;
 			HoldInformations.SetScore(GameObject.FindGameObjectWithTag ("pug").GetComponent<Score> ().score);
 			
@@ -97,6 +102,7 @@ public class Enemies : MonoBehaviour {
 		//	position+=trajectory;
 		Instantiate (dogsBone, startPosition + (transform.right * (-3)) + (transform.up * 3), transform.rotation);
 		Instantiate (dogsBone, startPosition + (transform.right * 3) + (transform.up * 3), transform.rotation);
+		Debug.Log("dogsbohe" + dogsBone.transform.position);
 		
 		
 		//Instantiate(dogsBone, position, transform.rotation);

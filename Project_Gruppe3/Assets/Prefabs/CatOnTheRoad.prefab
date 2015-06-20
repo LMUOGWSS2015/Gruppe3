@@ -73,7 +73,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af5cca25536f48f9a98266bfb13f87e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pugLife: {fileID: 11400134, guid: ebf2b268e5ee94d39b33b35286cd4c10, type: 2}
   dogsBone: {fileID: 115724, guid: 37a697cb4b681407b8472136025ed6d2, type: 2}
   numbOfObj: 2
   radius: 0
