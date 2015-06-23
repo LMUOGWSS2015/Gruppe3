@@ -87,7 +87,6 @@ public class AddObject : GazeMonobehaviour {
 
 		//Creating random objects
 		randomObject = objectArray[Random.Range(0,objectArray.Length)];
-		Debug.Log ("Finde:" + randomObject);
 	}
 	
 	// Update is called once per frame
@@ -139,7 +138,7 @@ public class AddObject : GazeMonobehaviour {
 		ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 		if (Physics.Raycast (ray, out hit)) {
 			foreach (GameObject obj in objectArray) {
-				//TODO Zeitintervall + GAZE 
+				//TODO Zeitintervall
 				if (Vector3.Distance (hit.point, obj.transform.position) < 1.1) {
 					return hit.collider.name;
 				}
@@ -173,5 +172,7 @@ public class AddObject : GazeMonobehaviour {
 		} else {
 			GUI.Label(new Rect(125, 25, 100, 100), "Time is up!");
 		}
+
+		GUI.Label (new Rect (125, 150, 500, 100), "Finde: " + randomObject.name);
 	}
 }
