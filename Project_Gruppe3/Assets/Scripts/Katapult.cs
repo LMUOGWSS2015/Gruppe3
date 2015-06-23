@@ -12,14 +12,18 @@ public class Katapult : GazeMonobehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		jump ();
+
+	}
+	//Eyetracking
+	public void jump (){
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			dogRB.AddForce (Vector3.forward * 300);
 			dogRB.useGravity = false;
 		}
-
-
-
 	}
-	//Eyetracking
+
+
 
 }

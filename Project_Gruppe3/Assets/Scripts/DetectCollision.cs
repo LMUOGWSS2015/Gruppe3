@@ -3,33 +3,42 @@ using System.Collections;
 
 public class DetectCollision : MonoBehaviour {
 	public float timeLimit = 10.0f;
+	public int lives;
+	public float restartDelay = 3f;
+	public float restartTimer;
+
+
+	private Animator anim;
+
+	void Awake()
+	{
+		anim = GameObject.Find ("HUDCanvas").GetComponent<Animator>();
+		
+	}
 
 	// Update is called once per frame
 	void Update () {
 
 		timeLimit -= Time.deltaTime;
-		Debug.Log ("sdf");
+	
 	}
 
 	void OnCollisionEnter(Collision col){
 	
-		//detect collision with target
+		//detect "collision" with target
 		if (col.gameObject.name == "Target" && (timeLimit > 0)) {
 			//destroy target-wall
-			Destroy(col.gameObject); 
+			Destroy (col.gameObject); 
 
-			//TODO
-			//load new scene
-			//Application.LoadLevel(sceneName);
+			//back to main game
+			Application.LoadLevel ("Level1");
 		}
 		//TODO
 		//detect collision with cats
 		else if (col.gameObject.name == "Cats") {
-			Debug.Log ("Hallo");
-			//reset scene
-			ResetScene(); 
-			//TODO
-			//life -1
+			Debug.Log ("-1 Live");
+			
+			decreaseLive();
 		}
 	}
 
@@ -39,7 +48,8 @@ public class DetectCollision : MonoBehaviour {
 			GUI.Label (new Rect (125, 25, 200, 100), "Time Remaining: " + (int)timeLimit);
 		} else {
 			GUI.Label(new Rect(125, 25, 100, 100), "Time is up!");
-			ResetScene(); 
+			decreaseLive();
+		//	ResetScene(); 
 		}
 	}
 
@@ -48,4 +58,29 @@ public class DetectCollision : MonoBehaviour {
 	
 		Application.LoadLevel(Application.loadedLevel);
 	}
+
+	// one live less
+	public void decreaseLive (){
+		lives = HoldInformations.GetLife()- 1; 
+		HoldInformations.SetLife (lives);
+		
+		if (lives <= 0) {
+			Debug.Log ("Game Over!");
+			anim.SetTrigger ("IsGameOver");
+			Application.LoadLevel("Menu");
+			
+			HoldInformations.SetLife (1);
+			/*
+  				restartTimer+= Time.deltaTime;
+				if(restartTimer >= restartDelay){
+					Application.LoadLevel("Menu");
+				}
+*/
+		} else {
+			//reset scene
+			ResetScene (); 
+		}
+	}
+
+
 }

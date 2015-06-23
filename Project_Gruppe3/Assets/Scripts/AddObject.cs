@@ -16,11 +16,13 @@ public class AddObject : GazeMonobehaviour {
 	public int maxAttempt = 9;
 	private int currentScale = 2; 
 	public Vector3 gazePosition;
-	
+	public bool timeMouseOverBool= false;
+	public float timeMouseOver= 0.0f;
+
 
 	void Start () {
 
-		timeLimit = 10.0f;
+		timeLimit = 30.0f;
 
 		//Definition of object position
 		positions = new [] { new Vector3(-7f,14f,10f), new Vector3(0f,14f,10f),new Vector3(7f,14f,10f),new Vector3(-7f,8f,10f),new Vector3(0f,8f,10f),
@@ -88,26 +90,30 @@ public class AddObject : GazeMonobehaviour {
 		//Creating random objects
 		randomObject = objectArray[Random.Range(0,objectArray.Length)];
 		Debug.Log ("Finde:" + randomObject);
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
+		mouseOverTimer ();
 		gazePosition = SMIGazeController.Instance.GetSample ().averagedEye.gazePosInUnityScreenCoords ();
-
 		//Licht trifft auf Objekt + Ist es das gesuchte Objekt ? + Zeit ist noch nicht abgelaufen
-		if (randomObject.name == GetLightedGameObjectMouse() && (timeLimit > 0)) {
+		if (randomObject.name == GetLightedGameObjectMouse() && (timeLimit > 0) && timeMouseOverBool) {
 
 			Debug.Log ("Gewonnen!!");
+			//back to main game
+			Application.LoadLevel ("Level1");
 
 		}
-		else if(randomObject.name == GetLightedGameObjectEyes() && (timeLimit >0)){
+		else if(randomObject.name == GetLightedGameObjectEyes() && (timeLimit >0) && timeMouseOverBool){
 
 			Debug.Log ("Gewonnen!!");
+			//back to main game
+			Application.LoadLevel ("Level1");
 		}
 		else {
 			timeLimit -= Time.deltaTime;
-		
+
 
 		}
 
@@ -171,6 +177,29 @@ public class AddObject : GazeMonobehaviour {
 			GUI.Label (new Rect (125, 25, 200, 100), "Time Remaining: " + (int)timeLimit);
 		} else {
 			GUI.Label(new Rect(125, 25, 100, 100), "Time is up!");
+			//back to main game
+		//	Application.LoadLevel ("Level1");
+		}
+	}
+
+	//check if mouseOver was long enough
+	void mouseOverTimer()
+	{
+		if(randomObject.name == GetLightedGameObjectMouse()!=null)
+		{
+			timeMouseOver = Time.time;
+			Debug.Log("randomObject.name: " +randomObject.name+ " GetLightedGameObjectMouse: " + GetLightedGameObjectMouse());
+			Debug.Log("MouseOver since : " + timeMouseOver + " Seconds");
+		}
+		if(randomObject.name != GetLightedGameObjectMouse())
+		{
+			timeMouseOver = 0.0f;
+			Debug.Log("MouseOver since : " + timeMouseOver + " Seconds");
+		}
+
+		if(Time.time - timeMouseOver >= 5.0f)
+		{
+			timeMouseOverBool = true;
 		}
 	}
 }

@@ -11,10 +11,7 @@ public class LightFlash : GazeMonobehaviour{
 	void Start()
 	{
 		Cursor.visible = false;
-		// Start a calibration
-		SMIGazeController.Instance.StartCalibration(calibrationType);
-		// Start a validation
-		//SMIGazeController.Instance.StartValidation();
+
 	}
 	
 	
@@ -36,6 +33,12 @@ public class LightFlash : GazeMonobehaviour{
 	}
 
 	public void eyetracker (float offsetDistance){
+		// Start a calibration
+		SMIGazeController.Instance.StartCalibration(calibrationType);
+		// Start a validation
+		//SMIGazeController.Instance.StartValidation();
+
+
 		Vector3 gazePosition = SMIGazeController.Instance.GetSample ().averagedEye.gazePosInUnityScreenCoords ();
 		Ray ray = Camera.main.ScreenPointToRay(gazePosition);
 		RaycastHit hit;
