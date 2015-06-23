@@ -99,6 +99,7 @@ public class AddObject : GazeMonobehaviour {
 		if (randomObject.name == GetLightedGameObjectMouse() && (timeLimit > 0)) {
 
 			Debug.Log ("Gewonnen!!");
+			//TODO: Gewonnen + 1 Leben + Speil verlassen
 
 		}
 		else if(randomObject.name == GetLightedGameObjectEyes() && (timeLimit >0)){
@@ -138,7 +139,7 @@ public class AddObject : GazeMonobehaviour {
 		ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 		if (Physics.Raycast (ray, out hit)) {
 			foreach (GameObject obj in objectArray) {
-
+				//TODO Zeitintervall + GAZE 
 				if (Vector3.Distance (hit.point, obj.transform.position) < 1.1) {
 					return hit.collider.name;
 				}
@@ -149,7 +150,7 @@ public class AddObject : GazeMonobehaviour {
 		
 	}
 
-	//Method: Get the Object which is clicked
+	//Method: Get the Object which is checked by eye
 	string GetLightedGameObjectEyes(){
 		ray = Camera.main.ScreenPointToRay (gazePosition);
 		if (Physics.Raycast (ray, out hit)) {

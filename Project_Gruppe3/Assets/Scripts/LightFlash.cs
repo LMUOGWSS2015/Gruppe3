@@ -20,9 +20,10 @@ public class LightFlash : GazeMonobehaviour{
 	
 	
 	void Update () {
-
-		mouse (offsetDistanceMouse);
-	//	eyetracker (offsetDistanceGaze);
+		if(ToogleEyetracking.toggleEyetracking == false){
+			mouse (offsetDistanceMouse);
+		}
+		else eyetracker (offsetDistanceGaze);
 		
 	}
 	public void mouse (float offsetDistance){
