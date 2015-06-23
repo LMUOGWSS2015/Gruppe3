@@ -15,37 +15,45 @@ public class DetectCollision : MonoBehaviour {
 		anim = GameObject.Find ("HUDCanvas").GetComponent<Animator>();
 		
 	}
+	public float timelimitLevel = 20.0f;
 
 	// Update is called once per frame
 	void Update () {
 
 		timeLimit -= Time.deltaTime;
 	
+		this.timelimitLevel -= Time.deltaTime;
 	}
 
 	void OnCollisionEnter(Collision col){
 	
 		//detect "collision" with target
 		if (col.gameObject.name == "Target" && (timeLimit > 0)) {
-			//destroy target-wall
-			Destroy (col.gameObject); 
+			//detect collision with target
+			if (col.gameObject.name == "Target" && (timelimitLevel > 0)) {
+				//destroy target-wall
+				Destroy (col.gameObject); 
 
-			//back to main game
-			Application.LoadLevel ("Level1");
-		}
+				//back to main game
+				Application.LoadLevel ("Level1");
+			}
 		//TODO
 		//detect collision with cats
 		else if (col.gameObject.name == "Cats") {
-			Debug.Log ("-1 Live");
-			
-			decreaseLive();
+				Debug.Log ("-1 Live");
+				decreaseLive ();
+				//reset scene#
+				ResetScene (); 
+				//TODO
+				//life -1
+			}
 		}
 	}
 
 	//Zeitdisplay in der GUI :) 
 	void OnGUI(){
-		if (timeLimit > 0) {
-			GUI.Label (new Rect (125, 25, 200, 100), "Time Remaining: " + (int)timeLimit);
+		if (timelimitLevel  > 0) {
+			GUI.Label (new Rect (125, 25, 200, 100), "Time Remaining: " + (int)timelimitLevel );
 		} else {
 			GUI.Label(new Rect(125, 25, 100, 100), "Time is up!");
 			decreaseLive();

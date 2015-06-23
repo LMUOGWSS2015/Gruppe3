@@ -91,6 +91,7 @@ public class AddObject : GazeMonobehaviour {
 		randomObject = objectArray[Random.Range(0,objectArray.Length)];
 		Debug.Log ("Finde:" + randomObject);
 
+
 	}
 	
 	// Update is called once per frame
@@ -104,12 +105,16 @@ public class AddObject : GazeMonobehaviour {
 			//back to main game
 			Application.LoadLevel ("Level1");
 
+			GameObject.FindGameObjectWithTag("pug").GetComponent<PugLife>().IncreaseLife();
+
 		}
 		else if(randomObject.name == GetLightedGameObjectEyes() && (timeLimit >0) && timeMouseOverBool){
 
 			Debug.Log ("Gewonnen!!");
 			//back to main game
 			Application.LoadLevel ("Level1");
+			GameObject.FindGameObjectWithTag("pug").GetComponent<PugLife>().IncreaseLife();
+
 		}
 		else {
 			timeLimit -= Time.deltaTime;
@@ -144,7 +149,7 @@ public class AddObject : GazeMonobehaviour {
 		ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 		if (Physics.Raycast (ray, out hit)) {
 			foreach (GameObject obj in objectArray) {
-
+				//TODO Zeitintervall
 				if (Vector3.Distance (hit.point, obj.transform.position) < 1.1) {
 					return hit.collider.name;
 				}
@@ -155,7 +160,7 @@ public class AddObject : GazeMonobehaviour {
 		
 	}
 
-	//Method: Get the Object which is clicked
+	//Method: Get the Object which is checked by eye
 	string GetLightedGameObjectEyes(){
 		ray = Camera.main.ScreenPointToRay (gazePosition);
 		if (Physics.Raycast (ray, out hit)) {
@@ -201,5 +206,7 @@ public class AddObject : GazeMonobehaviour {
 		{
 			timeMouseOverBool = true;
 		}
+
+		GUI.Label (new Rect (125, 150, 500, 100), "Finde: " + randomObject.name);
 	}
 }
