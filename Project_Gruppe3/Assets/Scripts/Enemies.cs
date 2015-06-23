@@ -40,8 +40,6 @@ public class Enemies : MonoBehaviour {
 
 	void OnTriggerEnter (Collider coll){
 
-
-		
 		// if Enemy collides with the Bullet (waterDrop), destroy it itself
 		if (coll.gameObject.tag == "waterDrop") {
 
@@ -54,13 +52,10 @@ public class Enemies : MonoBehaviour {
 			GameObject.FindGameObjectWithTag ("pug").GetComponent<Score> ().score += 100;
 			HoldInformations.SetScore(GameObject.FindGameObjectWithTag ("pug").GetComponent<Score> ().score);
 			
-		} else {
-			//do nothing
-		}
+		} 
 	}
 
-	void SpawnDogBones ()
-	{
+	void SpawnDogBones (){
 		
 		//Vector3 startPosition = new Vector3 (transform.position.x + 0.01F,
 		//                               transform.position.y + 5.2F,
