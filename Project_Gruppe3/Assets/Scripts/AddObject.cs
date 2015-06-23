@@ -97,13 +97,13 @@ public class AddObject : GazeMonobehaviour {
 		//Licht trifft auf Objekt + Ist es das gesuchte Objekt ? + Zeit ist noch nicht abgelaufen
 		if (randomObject.name == GetLightedGameObjectMouse() && (timeLimit > 0)) {
 
-			Debug.Log ("Gewonnen!!");
-			//TODO: Gewonnen + 1 Leben + Speil verlassen
+			GameObject.FindGameObjectWithTag("pug").GetComponent<PugLife>().IncreaseLife();
 
 		}
 		else if(randomObject.name == GetLightedGameObjectEyes() && (timeLimit >0)){
 
-			Debug.Log ("Gewonnen!!");
+			GameObject.FindGameObjectWithTag("pug").GetComponent<PugLife>().IncreaseLife();
+
 		}
 		else {
 			timeLimit -= Time.deltaTime;
