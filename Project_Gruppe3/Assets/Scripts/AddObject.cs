@@ -25,8 +25,8 @@ public class AddObject : GazeMonobehaviour {
 		timeLimit = 30.0f;
 
 		//Definition of object position
-		positions = new [] { new Vector3(-7f,14f,10f), new Vector3(0f,14f,10f),new Vector3(7f,14f,10f),new Vector3(-7f,8f,10f),new Vector3(0f,8f,10f),
-			new Vector3(7f,8f,10f),new Vector3(-7f,2f,10f),new Vector3(0f,2f,10f),new Vector3(7f,2f,10f) };
+		positions = new [] { new Vector3(-7f,15f,10f), new Vector3(0f,12f,10f),new Vector3(6f,14f,10f),new Vector3(-6f,8f,10f),new Vector3(0f,7f,10f),
+			new Vector3(8f,7f,10f),new Vector3(-8f,1f,10f),new Vector3(-1f,0f,10f),new Vector3(6f,2f,10f) };
 		objectArray = new GameObject[9];
 		inUse = new bool[9];
 	
