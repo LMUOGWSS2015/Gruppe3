@@ -58,7 +58,6 @@ public class EnemiesSpawnManager : MonoBehaviour {
 		//}
 		//Destroy is now Working 
 		float distance = Vector3.Distance (this.gameObject.transform.position, pug.transform.position);
-		Debug.Log ( distance +  this.gameObject.ToString() + "blla" + this.gameObject.transform.localPosition.ToString()+"bla"+pug.transform.position);
 		if (distance < 10f) {
 			CreateEnemy();
 			Destroy(this.gameObject);
