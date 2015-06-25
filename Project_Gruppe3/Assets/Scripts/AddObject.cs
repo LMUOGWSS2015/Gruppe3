@@ -183,8 +183,10 @@ public class AddObject : GazeMonobehaviour {
 		} else {
 			GUI.Label(new Rect(125, 25, 100, 100), "Time is up!");
 			//back to main game
-		//	Application.LoadLevel ("Level1");
+			//Application.LoadLevel ("Level1");
 		}
+		GUI.Label (new Rect (125, 150, 500, 100), "Finde: " + randomObject.name);
+
 	}
 
 	//check if mouseOver was long enough
@@ -207,6 +209,5 @@ public class AddObject : GazeMonobehaviour {
 			timeMouseOverBool = true;
 		}
 
-		GUI.Label (new Rect (125, 150, 500, 100), "Finde: " + randomObject.name);
 	}
 }
