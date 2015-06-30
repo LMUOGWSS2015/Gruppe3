@@ -14,7 +14,7 @@ public class BonusDoor : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		if(doorPoint == null)
-			doorPoint = GameObject.FindGameObjectsWithTag ("BonusDoor");
+			doorPoint = GameObject.FindGameObjectsWithTag ("BonusDooor");
 
 		length = doorPoint.Length;
 		index = Random.Range (0, doorPoint.Length);

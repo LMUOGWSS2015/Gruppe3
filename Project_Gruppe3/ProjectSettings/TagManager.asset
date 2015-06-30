@@ -13,6 +13,7 @@ TagManager:
   - GazeController
   - EnemySpawnPoint
   - BallOfWoolSpawnPoint
+  - BonusDooor
   layers:
   - Default
   - TransparentFX
