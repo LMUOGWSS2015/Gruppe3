@@ -95,8 +95,8 @@ public class Enemies : MonoBehaviour {
 		//	Vector3 trajectory = UnityEngine.Random.insideUnitCircle*3F;
 		//	Vector3 position = new Vector3(startPosition.x*i,startPosition.y+(i*2), startPosition.z);
 		//	position+=trajectory;
-		Instantiate (dogsBone, startPosition + (transform.right * (-3)) + (transform.up * 3), transform.rotation);
-		Instantiate (dogsBone, startPosition + (transform.right * 3) + (transform.up * 3), transform.rotation);
+		Instantiate (dogsBone, startPosition + (transform.right * (-4)) + (transform.up * 3), transform.rotation);
+		Instantiate (dogsBone, startPosition + (transform.right * 4) + (transform.up * 3), transform.rotation);
 		Debug.Log("dogsbohe" + dogsBone.transform.position);
 		
 		
