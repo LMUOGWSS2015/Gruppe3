@@ -6,7 +6,7 @@ public static class HoldInformations {
 	#region Variables (public)
 
 	public static int level = 1;
-	public static int lifes = 1;
+	public static int lifes;
 	public static int scores = 0;
 
 	#endregion

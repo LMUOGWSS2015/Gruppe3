@@ -6,7 +6,7 @@ public class PugLife : MonoBehaviour {
 	#region Variables (public)
 
 	public GameObject Player;
-	public int helmets = 1;
+	public int helmets;
 	public float restartDelay = 3f;
 
 	#endregion
