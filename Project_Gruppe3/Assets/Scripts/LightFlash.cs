@@ -4,7 +4,7 @@ using iView;
 
 public class LightFlash : GazeMonobehaviour{
 	public float offsetDistanceGaze =10.0f;
-	public float offsetDistanceMouse =0.25f;
+	public float offsetDistanceMouse =10.0f;
 
 	int calibrationType = 1;
 
@@ -17,11 +17,13 @@ public class LightFlash : GazeMonobehaviour{
 	
 	
 	void Update () {
-		if(ToogleEyetracking.toggleEyetracking == false){
+		eyetracker (offsetDistanceMouse);
+
+/*		if(ToogleEyetracking.toggleEyetracking == false){
 			mouse (offsetDistanceMouse);
 		}
 		else eyetracker (offsetDistanceGaze);
-		
+	*/	
 	}
 	public void mouse (float offsetDistance){
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -35,7 +37,7 @@ public class LightFlash : GazeMonobehaviour{
 
 	public void eyetracker (float offsetDistance){
 		// Start a calibration
-		SMIGazeController.Instance.StartCalibration(calibrationType);
+	//	SMIGazeController.Instance.StartCalibration(calibrationType);
 		// Start a validation
 		//SMIGazeController.Instance.StartValidation();
 

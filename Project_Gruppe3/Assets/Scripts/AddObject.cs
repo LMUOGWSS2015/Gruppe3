@@ -83,7 +83,9 @@ public class AddObject : GazeMonobehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		mouseOverTimer ();
+		Debug.Log (GetLightedGameObjectMouse());
+
+
 		gazePosition = SMIGazeController.Instance.GetSample ().averagedEye.gazePosInUnityScreenCoords ();
 		//Licht trifft auf Objekt + Ist es das gesuchte Objekt ? + Zeit ist noch nicht abgelaufen
 		if (randomObject.name == GetLightedGameObjectMouse() && (timeLimit > 0) && timeMouseOverBool) {
@@ -181,13 +183,13 @@ public class AddObject : GazeMonobehaviour {
 				Debug.Log("randomObject.name: " +randomObject.name+ " GetLightedGameObjectMouse: " + GetLightedGameObjectMouse());
 				Debug.Log("MouseOver since : " + timeMouseOver + " Seconds");
 			}
-			if(randomObject.name != GetLightedGameObjectMouse())
+			else if(randomObject.name != GetLightedGameObjectMouse())
 			{
 				timeMouseOver = 0.0f;
 				Debug.Log("MouseOver since : " + timeMouseOver + " Seconds");
 			}
 			
-			if(Time.time - timeMouseOver >= 5.0f)
+			else if(Time.time - timeMouseOver >= 5.0f)
 			{
 				timeMouseOverBool = true;
 			}
