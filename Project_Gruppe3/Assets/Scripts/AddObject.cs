@@ -25,8 +25,8 @@ public class AddObject : GazeMonobehaviour {
 		timeLimit = 30.0f;
 		
 		//Definition of object position
-		positions = new [] { new Vector3(-7f,14f,10f), new Vector3(0f,14f,10f),new Vector3(7f,14f,10f),new Vector3(-7f,8f,10f),new Vector3(0f,8f,10f),
-			new Vector3(7f,8f,10f),new Vector3(-7f,2f,10f),new Vector3(0f,2f,10f),new Vector3(7f,2f,10f), new Vector3(9f,2f,10f) };		
+		positions = new [] { new Vector3(-7f,14f,12f), new Vector3(0f,14f,12f),new Vector3(7f,14f,12f),new Vector3(-7f,8f,12f),new Vector3(0f,8f,12f),
+			new Vector3(7f,8f,12f),new Vector3(-7f,2f,12f),new Vector3(0f,2f,12f),new Vector3(7f,4f,12f), new Vector3(1f,-1f,12f) };		
 		objectArray = new GameObject[10];
 		inUse = new bool[10];
 		
@@ -60,7 +60,7 @@ public class AddObject : GazeMonobehaviour {
 		
 		GameObject pumpkin = GameObject.Find ("pumpkin");
 		pumpkin.transform.position = GetPosition ();
-		
+
 		//Adding objects to array
 		objectArray[0]= alien;
 		objectArray[1]= apple;
@@ -83,13 +83,14 @@ public class AddObject : GazeMonobehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log (GetLightedGameObjectMouse());
-
-
+		//Debug.Log (GetLightedGameObjectMouse());
+		
 		gazePosition = SMIGazeController.Instance.GetSample ().averagedEye.gazePosInUnityScreenCoords ();
 		//Licht trifft auf Objekt + Ist es das gesuchte Objekt ? + Zeit ist noch nicht abgelaufen
-		if (randomObject.name == GetLightedGameObjectMouse() && (timeLimit > 0) && timeMouseOverBool) {
-			
+
+		//BG: timeMouseOverBool deleted
+		if (randomObject.name == GetLightedGameObjectMouse() && (timeLimit > 0)) {
+
 			Debug.Log ("Gewonnen!!");
 			//back to main game
 			Application.LoadLevel ("Level1");
@@ -134,9 +135,12 @@ public class AddObject : GazeMonobehaviour {
 			ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			if (Physics.Raycast (ray, out hit)) {
 				foreach (GameObject obj in objectArray) {
+		
 					//TODO Zeitintervall
 					if (Vector3.Distance (hit.point, obj.transform.position) < 1.1) {
-						return hit.collider.name;
+
+						//BG: hit.collider.name replaced with obj.transform.name 
+						return obj.transform.name;
 					}
 				}
 				return null;
