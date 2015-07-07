@@ -265,8 +265,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ContainerTop: {fileID: 100004}
-  OpenText: 5072657373204520746f204f70656e2e
-  CloseText: 5072657373204520746f20436c6f73652e
+  OpenText: Press E to Open.
+  CloseText: Press E to Close.
   OpenClip: {fileID: 7400000, guid: d75aa38edae854b47ba13df95eb33750, type: 2}
   CloseClip: {fileID: 7400000, guid: e0f4d08c2fd56e64aab0dd2ecb34d06b, type: 2}
   PopUpText: {fileID: 0}

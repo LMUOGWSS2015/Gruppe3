@@ -150,10 +150,6 @@ Material:
         second: 50
       data:
         first:
-          name: _EMISSION
-        second: .899999976
-      data:
-        first:
           name: _IBLBrightness
         second: .918918908
       data:
@@ -168,6 +164,10 @@ Material:
         first:
           name: _Alpha
         second: 1
+      data:
+        first:
+          name: _EMISSION
+        second: .899999976
     m_Colors:
       data:
         first:

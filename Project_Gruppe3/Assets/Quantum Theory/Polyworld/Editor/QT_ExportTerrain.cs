@@ -96,7 +96,14 @@ class QT_ExportTerrain : EditorWindow
             GUILayout.Label("Resolution:");
             saveResolution = (SaveResolution)EditorGUILayout.EnumPopup("", saveResolution);
             TerrainCollider[] tcs = UnityEngine.Object.FindObjectsOfType<TerrainCollider>();
-     
+            
+            //check to see if the terrain is using the standard shader. if so, revert it to legacy diffuse so we render VC properly.
+            if (terrainObject.materialType != Terrain.MaterialType.BuiltInLegacyDiffuse)
+            {
+                terrainObject.materialType = Terrain.MaterialType.BuiltInLegacyDiffuse;
+                Debug.Log("Changing terrain material type to Legacy Diffuse so the vertex colors will render properly for PolyWorld Terrains.");
+            }
+
             foreach (TerrainCollider t in tcs)
             {
                 //if the two terrain datas match but we aren't looking at the same gameobject..
