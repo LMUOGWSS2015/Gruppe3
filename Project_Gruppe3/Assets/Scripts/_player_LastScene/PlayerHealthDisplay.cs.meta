@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 2f68bbcb384fc204b85c892c9110155f
+timeCreated: 1434661691
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - helmetsCountDisplay: {fileID: 118406, guid: fc50538de2b8d5243a906b64a11f229f,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

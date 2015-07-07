@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 5ed847fbc672d9748a5e344864b12e4e
+timeCreated: 1434669498
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - healthBarSlider: {fileID: 159450, guid: fc50538de2b8d5243a906b64a11f229f, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
