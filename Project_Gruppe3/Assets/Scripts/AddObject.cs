@@ -13,7 +13,7 @@ public class AddObject : GazeMonobehaviour {
 	public float timeLimit;
 	public Vector3[] positions;
 	public bool[] inUse;
-	public int maxAttempt = 9;
+	public int maxAttempt = 10;
 	private int currentScale = 2; 
 	public Vector3 gazePosition;
 	public bool timeMouseOverBool= false;
@@ -25,67 +25,54 @@ public class AddObject : GazeMonobehaviour {
 		timeLimit = 30.0f;
 
 		//Definition of object position
-		positions = new [] { new Vector3(-7f,15f,10f), new Vector3(0f,12f,10f),new Vector3(6f,14f,10f),new Vector3(-6f,8f,10f),new Vector3(0f,7f,10f),
-			new Vector3(8f,7f,10f),new Vector3(-8f,1f,10f),new Vector3(-1f,0f,10f),new Vector3(6f,2f,10f) };
-		objectArray = new GameObject[9];
-		inUse = new bool[9];
+		ppositions = new [] { new Vector3(-7f,14f,12f), new Vector3(0f,14f,12f),new Vector3(7f,14f,12f),new Vector3(-7f,8f,12f),new Vector3(0f,8f,12f),
+			new Vector3(7f,8f,12f),new Vector3(-7f,2f,12f),new Vector3(0f,2f,12f),new Vector3(7f,4f,12f), new Vector3(1f,-1f,12f) };			objectArray = new GameObject[10];
+		inUse = new bool[10];
 	
 		//Adding objects
-		GameObject cube1 = GameObject.CreatePrimitive(PrimitiveType.Cube);
-		cube1.transform.position = GetPosition ();
-		cube1.transform.parent = GameObject.Find ("Search Objects").transform; 
-		cube1.transform.localScale = new Vector3 (currentScale, currentScale, 0.01f); 
-
-		GameObject cube2 = GameObject.CreatePrimitive(PrimitiveType.Cube);
-		cube2.transform.position = GetPosition ();
-		cube2.transform.parent = GameObject.Find ("Search Objects").transform; 
-		cube2.transform.localScale = new Vector3 (currentScale, currentScale, 0.01f); 
-
-		GameObject cube3 = GameObject.CreatePrimitive(PrimitiveType.Cube);
-		cube3.transform.position = GetPosition ();
-		cube3.transform.parent = GameObject.Find ("Search Objects").transform; 
-		cube3.transform.localScale = new Vector3 (currentScale, currentScale, 0.01f); 
-
-		GameObject cube4 = GameObject.CreatePrimitive(PrimitiveType.Cube);
-		cube4.transform.position = GetPosition ();
-		cube4.transform.parent = GameObject.Find ("Search Objects").transform; 
-		cube4.transform.localScale = new Vector3 (currentScale, currentScale, 0.01f); 
-
-		GameObject cube5 = GameObject.CreatePrimitive(PrimitiveType.Cube);
-		cube5.transform.position = GetPosition ();
-		cube5.transform.parent = GameObject.Find ("Search Objects").transform; 
-		cube5.transform.localScale = new Vector3 (currentScale, currentScale, 0.01f); 
-
-		GameObject cube6 = GameObject.CreatePrimitive(PrimitiveType.Cube);
-		cube6.transform.position = GetPosition ();
-		cube6.transform.parent = GameObject.Find ("Search Objects").transform; 
-		cube6.transform.localScale = new Vector3 (currentScale, currentScale, 0.01f); 
-
-		GameObject cube7 = GameObject.CreatePrimitive(PrimitiveType.Cube);
-		cube7.transform.position = GetPosition ();
-		cube7.transform.parent = GameObject.Find ("Search Objects").transform; 
-		cube7.transform.localScale = new Vector3 (currentScale, currentScale, 0.01f); 
-
-		GameObject cube8 = GameObject.CreatePrimitive(PrimitiveType.Cube);
-		cube8.transform.position = GetPosition ();
-		cube8.transform.parent = GameObject.Find ("Search Objects").transform; 
-		cube8.transform.localScale = new Vector3 (currentScale, currentScale, 0.01f); 
-
-		GameObject cube9 = GameObject.CreatePrimitive(PrimitiveType.Cube);
-		cube9.transform.position = GetPosition ();
-		cube9.transform.parent = GameObject.Find ("Search Objects").transform; 
-		cube9.transform.localScale = new Vector3 (currentScale, currentScale, 0.01f); 
-
+		GameObject alien = GameObject.Find ("alien");
+		alien.transform.position = GetPosition ();
+		
+		GameObject apple = GameObject.Find ("apple");
+		apple.transform.position = GetPosition ();
+		
+		GameObject bear = GameObject.Find ("bear");
+		bear.transform.position = GetPosition ();
+		
+		GameObject car = GameObject.Find ("car");
+		car.transform.position = GetPosition ();
+		
+		GameObject dolly = GameObject.Find ("dolly");
+		dolly.transform.position = GetPosition ();
+		
+		GameObject gift = GameObject.Find ("gift");
+		gift.transform.position = GetPosition ();
+		
+		GameObject giraffe = GameObject.Find ("giraffe");
+		giraffe.transform.position = GetPosition ();
+		
+		GameObject star = GameObject.Find ("star");
+		star.transform.position = GetPosition (); 
+		
+		GameObject penguin = GameObject.Find ("pengiun");
+		penguin.transform.position = GetPosition ();
+		
+		GameObject pumpkin = GameObject.Find ("pumpkin");
+		pumpkin.transform.position = GetPosition ();
+		
 		//Adding objects to array
-		objectArray[0]= cube1;
-		objectArray[1]= cube2;
-		objectArray[2]= cube3;
-		objectArray[3]= cube4;
-		objectArray[4]= cube5;
-		objectArray[5]= cube6;
-		objectArray[6]= cube7;
-		objectArray[7]= cube8;
-		objectArray[8]= cube9;
+
+		objectArray[0]= alien;
+		objectArray[1]= apple;
+		objectArray[2]= bear;
+		objectArray[3]= car;
+		objectArray[4]= dolly;
+		objectArray[5]= gift;
+		objectArray[6]= giraffe;
+		objectArray[7]= star;
+		objectArray[8]= penguin;
+		objectArray[9]= pumpkin;
+		
 
 		//Creating random objects
 		randomObject = objectArray[Random.Range(0,objectArray.Length)];
@@ -99,7 +86,8 @@ public class AddObject : GazeMonobehaviour {
 		mouseOverTimer ();
 		gazePosition = SMIGazeController.Instance.GetSample ().averagedEye.gazePosInUnityScreenCoords ();
 		//Licht trifft auf Objekt + Ist es das gesuchte Objekt ? + Zeit ist noch nicht abgelaufen
-		if (randomObject.name == GetLightedGameObjectMouse() && (timeLimit > 0) && timeMouseOverBool) {
+		//BG: timeMouseOverBool deleted
+		if (randomObject.name == GetLightedGameObjectMouse() && (timeLimit > 0)) {
 
 			Debug.Log ("Gewonnen!!");
 			//back to main game
@@ -143,7 +131,6 @@ public class AddObject : GazeMonobehaviour {
 		return positions[index];
 		
 	}
-
 	//Method: Get the Object which is hovered
 	string GetLightedGameObjectMouse(){
 		ray = Camera.main.ScreenPointToRay (Input.mousePosition);
@@ -151,7 +138,8 @@ public class AddObject : GazeMonobehaviour {
 			foreach (GameObject obj in objectArray) {
 				//TODO Zeitintervall
 				if (Vector3.Distance (hit.point, obj.transform.position) < 1.1) {
-					return hit.collider.name;
+					//BG: hit.collider.name replaced with obj.transform.name 
+					return obj.transform.name;
 				}
 			}
 			return null;
