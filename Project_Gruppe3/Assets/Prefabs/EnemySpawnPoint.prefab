@@ -85,8 +85,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8652e2027a3fb4391a4862c9e9d009ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newEnemy: {fileID: 128584, guid: 03e628469567e4d8aa3d51b6c4ac0c68, type: 2}
-  player: {fileID: 194820, guid: ebf2b268e5ee94d39b33b35286cd4c10, type: 2}
+  newEnemy: {fileID: 107354, guid: 16a5ec1b8e2754d929f009a9fad6d534, type: 2}
+  player: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

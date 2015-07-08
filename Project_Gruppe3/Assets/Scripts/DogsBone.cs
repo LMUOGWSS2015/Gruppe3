@@ -54,8 +54,8 @@ public class DogsBone : MonoBehaviour
 		if (coll.tag == "pug") {
 			// if bullet collides with anything, destroy it
 			Destroy (this.gameObject);
-			GameObject.FindGameObjectWithTag("pug").GetComponent<Score>().score+=100;
-			HoldInformations.SetScore(GameObject.FindGameObjectWithTag("pug").GetComponent<Score>().score);
+			GameObject.FindGameObjectWithTag("fer").GetComponent<Score>().score+=100;
+			HoldInformations.SetScore(GameObject.FindGameObjectWithTag("fer").GetComponent<Score>().score);
 		}
 	}
 

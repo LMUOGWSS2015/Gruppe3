@@ -6,7 +6,7 @@ public class EnemiesSpawnManager : MonoBehaviour {
 	#region Variables (public)
 
 	public GameObject newEnemy;
-	public GameObject player;
+	//public GameObject player;
 
 	#endregion
 
@@ -15,6 +15,7 @@ public class EnemiesSpawnManager : MonoBehaviour {
 
 	private GameObject[] enemyPoints;
 	private GameObject pug;
+	private Animation anim;
 
 
 	
@@ -26,7 +27,7 @@ public class EnemiesSpawnManager : MonoBehaviour {
 
 	void Update(){
 		// Get all Spawning Points
-		pug=GameObject.FindGameObjectWithTag("pug");
+		pug=GameObject.FindGameObjectWithTag("fer");
 
 		if(enemyPoints == null)
 			enemyPoints = GameObject.FindGameObjectsWithTag ("EnemySpawnPoint");
@@ -74,7 +75,9 @@ public class EnemiesSpawnManager : MonoBehaviour {
 		// Creatin enemy infront of the player's view
 		Instantiate(newEnemy, 
 		            pug.transform.position + pug.transform.forward * 30f,
-		            new Quaternion( 0.0f, player.transform.rotation.y, 0.0f, player.transform.rotation.w));
+		            new Quaternion( 0.0f, pug.transform.rotation.y, 0.0f, pug.transform.rotation.w));
+		Debug.Log (pug.transform.position + "," + pug.transform.forward);
+		//anim.Play("CatSkating");
 	}
 
 	/**

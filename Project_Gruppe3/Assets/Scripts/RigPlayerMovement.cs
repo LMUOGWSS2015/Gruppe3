@@ -248,6 +248,7 @@ public class RigPlayerMovement : MonoBehaviour
 	private Vector3 groundVelocity;
 	private CapsuleCollider capsule;
 	private float yRot;
+	private GameObject pug;
 	
 	// Inputs Cache
 	private bool jumpFlag = false;
@@ -301,7 +302,7 @@ public class RigPlayerMovement : MonoBehaviour
 	/// </summary>
 	void Start ()
 	{
-		
+		pug = GameObject.FindGameObjectWithTag ("fer");
 	}
 	
 	/// <summary>
@@ -364,19 +365,19 @@ public class RigPlayerMovement : MonoBehaviour
 	void  ShootWithWater (float sphereDistance)
 	{
 
-		Vector3 startPosition = new Vector3 (transform.position.x+0.01F,
-		                                     transform.position.y+5.2F,
-					                                   transform.position.z);
+		Vector3 startPosition = new Vector3 (transform.position.x,
+		                                     transform.position.y,
+					                         transform.position.z);
 
 		Vector3 velocityChangeForShot = 1.01F*(startPosition);
 
 
 		// spawn 1 kugel
-		Instantiate (bulletSphere, velocityChangeForShot, transform.rotation);
+		//Instantiate (bulletSphere, velocityChangeForShot, transform.rotation);
 
-
-
-
+		Instantiate (bulletSphere, 
+		             velocityChangeForShot + pug.transform.forward * 8F,
+		             new Quaternion (0.0f, pug.transform.rotation.y, 0.0f, pug.transform.rotation.w));
 	}
 
 

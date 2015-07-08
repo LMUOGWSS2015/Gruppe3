@@ -6,8 +6,7 @@ public class BallOfWoolSpawnManager : MonoBehaviour {
 	#region Variables (public)
 	
 	public GameObject newBallOfWool;
-	public GameObject player;
-	
+
 	#endregion
 	
 	
@@ -23,7 +22,7 @@ public class BallOfWoolSpawnManager : MonoBehaviour {
 	
 	void Update(){
 		// Get all Spawning Points
-		pug=GameObject.FindGameObjectWithTag("pug");
+		pug=GameObject.FindGameObjectWithTag("fer");
 		
 		if(ballOfWoolPoints == null)
 			ballOfWoolPoints = GameObject.FindGameObjectsWithTag ("BallOfWoolSpawnPoint");
@@ -46,7 +45,7 @@ public class BallOfWoolSpawnManager : MonoBehaviour {
 		// Creatin enemy infront of the player's view
 		Instantiate(newBallOfWool, 
 		            pug.transform.position + pug.transform.forward * 30f,
-		            new Quaternion( 0.0f, player.transform.rotation.y, 0.0f, player.transform.rotation.w));
+		            new Quaternion( 0.0f, pug.transform.rotation.y, 0.0f, pug.transform.rotation.w));
 	}
 	
 	#endregion

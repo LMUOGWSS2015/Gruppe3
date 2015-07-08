@@ -2,29 +2,32 @@
 using System.Collections;
 
 public class BallOfWool : MonoBehaviour {
-	
-	#region Variables (public)
 
-	public GameObject dogsBone;
-	public int numbOfObj;
-	public float radius = 1f;
-	//public RaycastHit hit;
-	Vector3 startPosition;
-	
+	#region Variables (private)
+
+	private AudioSource audio;
+
 	#endregion
-	
-	
+
+
 	#region Methods
+
+	void Start(){
+
+		audio = GetComponent<AudioSource>();
+	}
 	
 	void OnCollisionEnter (Collision col){
 		
 		// Enemy hits Player --> Player gettin hurt
-		if (col.gameObject.name == "Player"){
+		if (GameObject.FindGameObjectWithTag("pug")){
 			Debug.Log("-1 life");
 			//isHurt = true;
 			
 			//pugLife.DecreaseLife();
-			GameObject.FindGameObjectWithTag("pug").GetComponent<PugLife>().DecreaseLife();
+			GameObject.FindGameObjectWithTag("fer").GetComponent<PugLife>().DecreaseLife();
+
+			audio.Play();
 		}
 	}
 

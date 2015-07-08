@@ -8,9 +8,9 @@ public class minusHelmet : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider coll)
 	{
-		if(coll.tag == "pug")
+		if(coll.tag == "fer")
 		{
-			GameObject.FindGameObjectWithTag("pug").GetComponent<PugLife>().DecreaseLife();
+			GameObject.FindGameObjectWithTag("fer").GetComponent<PugLife>().DecreaseLife();
 			Destroy(this.gameObject);
 		}
 	}

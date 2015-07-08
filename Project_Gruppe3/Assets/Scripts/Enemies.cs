@@ -6,29 +6,32 @@ public class Enemies : MonoBehaviour {
 	#region Variables (public)
 
 	public static bool isHurt = false;
-	//public PugLife pugLife;
 	public GameObject dogsBone;
 	//	public int numberOfObjects;
 	public int numbOfObj;
 	public float radius = 1f;
 	//public RaycastHit hit;
 	Vector3 startPosition;
+	public  double timer;
+	public bool onoff;
+
+	#endregion
+
+
+	#region Variables (private)
+
+	private GameObject player; 
+	private AudioSource audio;
 
 	#endregion
 
 
 	#region Methods
 
-	void OnCollisionEnter (Collision col){
+	/*void OnTriggerEnter (Collider col){
 
 		// Enemy hits Player --> Player gettin hurt
-		if (col.gameObject.name == "Player"){
-			Debug.Log("-1 life");
-			isHurt = true;
 
-			//pugLife.DecreaseLife();
-			GameObject.FindGameObjectWithTag("pug").GetComponent<PugLife>().DecreaseLife();
-		}
 
 			
 			/*ContactPoint contact = col.contacts [0];
@@ -36,9 +39,28 @@ public class Enemies : MonoBehaviour {
 			Debug.Log (startPosition.ToString () + col.gameObject.ToString ());
 			Debug.Log (col.gameObject.ToString ());*/
 
+	//}
+
+	void Start(){
+
+		player = GameObject.Find("Player");
+		audio = GetComponent<AudioSource>();
 	}
 
+	
 	void OnTriggerEnter (Collider coll){
+
+		if (coll.tag == "fer"){
+			
+			Debug.Log("-1 life");
+			isHurt = true;
+			
+			//pugLife.DecreaseLife();
+			GameObject.FindGameObjectWithTag ("fer").GetComponent<PugLife>().DecreaseLife();
+
+			Blinking();
+			audio.Play();
+		}
 
 		// if Enemy collides with the Bullet (waterDrop), destroy it itself
 		if (coll.gameObject.tag == "waterDrop") {
@@ -46,11 +68,12 @@ public class Enemies : MonoBehaviour {
 			startPosition = coll.transform.position;
 			// run destruction function
 			Destroy (this.gameObject);
+
 			SpawnDogBones ();
 	
-			// Adding score points for killing an enemies
-			GameObject.FindGameObjectWithTag ("pug").GetComponent<Score> ().score += 100;
-			HoldInformations.SetScore(GameObject.FindGameObjectWithTag ("pug").GetComponent<Score> ().score);
+			// Adding score points for killing an enemy
+			GameObject.FindGameObjectWithTag ("fer").GetComponent<Score> ().score += 100;
+			HoldInformations.SetScore(GameObject.FindGameObjectWithTag ("fer").GetComponent<Score> ().score);
 			
 		} 
 	}
@@ -95,8 +118,8 @@ public class Enemies : MonoBehaviour {
 		//	Vector3 trajectory = UnityEngine.Random.insideUnitCircle*3F;
 		//	Vector3 position = new Vector3(startPosition.x*i,startPosition.y+(i*2), startPosition.z);
 		//	position+=trajectory;
-		Instantiate (dogsBone, startPosition + (transform.right * (-4)) + (transform.up * 3), transform.rotation);
-		Instantiate (dogsBone, startPosition + (transform.right * 4) + (transform.up * 3), transform.rotation);
+		Instantiate (dogsBone, startPosition + (transform.right * (-3)) + (transform.up * 3), transform.rotation);
+		Instantiate (dogsBone, startPosition + (transform.right * 3) + (transform.up * 3), transform.rotation);
 		Debug.Log("dogsbohe" + dogsBone.transform.position);
 		
 		
@@ -105,5 +128,15 @@ public class Enemies : MonoBehaviour {
 	}
 
 
+	void Blinking(){
+
+		if (Time.time > timer) {
+			
+			timer = Time.time + .4;
+			onoff = !onoff;
+			player.GetComponent<Renderer> ().enabled = onoff;
+		}
+	}
+	
 	#endregion
 }

@@ -24,7 +24,7 @@ private GameObject pug;
 	void Update ()
 	{
 		// Get all Spawning Points
-		pug = GameObject.FindGameObjectWithTag ("pug");
+		pug = GameObject.FindGameObjectWithTag ("fer");
 
 		float distance = Vector3.Distance (this.gameObject.transform.position, pug.transform.position);
 		if (distance < 20f) {

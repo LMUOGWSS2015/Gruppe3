@@ -4,9 +4,7 @@ using System.Collections;
 public class PugLife : MonoBehaviour {
 
 	#region Variables (public)
-
-	public GameObject Player;
-	public int helmets;
+	
 	public float restartDelay = 3f;
 
 	#endregion
@@ -16,6 +14,7 @@ public class PugLife : MonoBehaviour {
 	
 	private Animator anim;
 	private float restartTimer;
+	private int helmets;
 
 	#endregion
 
@@ -55,6 +54,7 @@ public class PugLife : MonoBehaviour {
 		
 		if(helmets == 0)
 		{
+			Destroy(GetComponent<Animator>());
 			Debug.Log ("Game Over!");
 			anim.SetTrigger("IsGameOver");
 			

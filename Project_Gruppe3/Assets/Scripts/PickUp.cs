@@ -10,7 +10,7 @@ public class PickUP : MonoBehaviour
 	}
 	void OnTriggerEnter(Collider other)
 	{
-		if(other.tag == "pug")
+		if(other.tag == "fer")
 		{
 			GameObject.FindGameObjectWithTag("score").GetComponent<PugLife>().IncreaseLife();
 			Destroy(this.gameObject);

@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517e67262831f42bca1a2fe1e7b1e5cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Helmet: {fileID: 109562, guid: 4cc68be235c5b40929aae0da55bf7a43, type: 2}
+  Helmet: {fileID: 152430, guid: 850f38bf9329c46748683f1d6671bb80, type: 2}
 --- !u!136 &13643988
 CapsuleCollider:
   m_ObjectHideFlags: 1
