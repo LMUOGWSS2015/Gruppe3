@@ -249,6 +249,7 @@ public class RigPlayerMovement : MonoBehaviour
 	private CapsuleCollider capsule;
 	private float yRot;
 	private GameObject pug;
+	private GameObject shotpoint;
 	
 	// Inputs Cache
 	private bool jumpFlag = false;
@@ -258,13 +259,13 @@ public class RigPlayerMovement : MonoBehaviour
 	#region Properties (public)
 	
 	// Speeds
-	public float walkSpeed = 8.0f;
-	public float walkBackwardSpeed = 4.0f;
-	public float runSpeed = 14.0f;
-	public float runBackwardSpeed = 6.0f;
-	public float sidestepSpeed = 8.0f;
-	public float runSidestepSpeed = 12.0f;
-	public float maxVelocityChange = 10.0f;
+	public float walkSpeed=4.0F;
+	public float walkBackwardSpeed = 1.0f;
+	public float runSpeed=6.0F;
+	public float runBackwardSpeed = 3.0f;
+	public float sidestepSpeed = 3.0f;
+	public float runSidestepSpeed = 3.0f;
+	public float maxVelocityChange = 2.0f;
 
 	
 	// Air
@@ -303,6 +304,7 @@ public class RigPlayerMovement : MonoBehaviour
 	void Start ()
 	{
 		pug = GameObject.FindGameObjectWithTag ("fer");
+		shotpoint = GameObject.FindGameObjectWithTag ("shotpoint");
 	}
 	
 	/// <summary>
@@ -367,17 +369,18 @@ public class RigPlayerMovement : MonoBehaviour
 
 		Vector3 startPosition = new Vector3 (transform.position.x,
 		                                     transform.position.y,
-					                         transform.position.z);
+		                                     transform.position.z);
+		float distance = Vector3.Distance (shotpoint.transform.position, pug.transform.position);
 
 		Vector3 velocityChangeForShot = 1.01F*(startPosition);
 
 
 		// spawn 1 kugel
-		//Instantiate (bulletSphere, velocityChangeForShot, transform.rotation);
+		Instantiate (bulletSphere, startPosition+  shotpoint.transform.forward*1.6F, shotpoint.transform.rotation);
 
-		Instantiate (bulletSphere, 
-		             velocityChangeForShot + pug.transform.forward * 8F,
-		             new Quaternion (0.0f, pug.transform.rotation.y, 0.0f, pug.transform.rotation.w));
+		//Instantiate (bulletSphere, 
+		  //         velocityChangeForShot + shotpoint.transform.forward*1F,
+		    //       new Quaternion (0.0f, shotpoint.transform.rotation.y, 0.0f, shotpoint.transform.rotation.w));
 	}
 
 
