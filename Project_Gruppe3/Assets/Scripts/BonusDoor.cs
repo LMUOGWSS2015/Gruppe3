@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using iView
+using iView;
 
 public class BonusDoor : GazeMonobehaviour {
 
