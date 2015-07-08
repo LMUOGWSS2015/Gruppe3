@@ -30449,6 +30449,46 @@ Prefab:
       propertyPath: jumpHeight
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11451730, guid: 2a833ceb848734a5bb1bae07ae84bee2, type: 2}
+      propertyPath: steam
+      value: 
+      objectReference: {fileID: 8300000, guid: 57bd8b178b44c429383b69b31f71e243, type: 3}
+    - target: {fileID: 8201442, guid: 2a833ceb848734a5bb1bae07ae84bee2, type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11451730, guid: 2a833ceb848734a5bb1bae07ae84bee2, type: 2}
+      propertyPath: pew
+      value: 
+      objectReference: {fileID: 8300000, guid: 2f842347e39c842e4bea605bc5f2e836, type: 3}
+    - target: {fileID: 8201442, guid: 2a833ceb848734a5bb1bae07ae84bee2, type: 2}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244358, guid: 2a833ceb848734a5bb1bae07ae84bee2, type: 2}
+      propertyPath: BypassListenerEffects
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201442, guid: 2a833ceb848734a5bb1bae07ae84bee2, type: 2}
+      propertyPath: BypassEffects
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244358, guid: 2a833ceb848734a5bb1bae07ae84bee2, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201442, guid: 2a833ceb848734a5bb1bae07ae84bee2, type: 2}
+      propertyPath: BypassListenerEffects
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201442, guid: 2a833ceb848734a5bb1bae07ae84bee2, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201442, guid: 2a833ceb848734a5bb1bae07ae84bee2, type: 2}
+      propertyPath: Mute
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2a833ceb848734a5bb1bae07ae84bee2, type: 2}
   m_IsPrefabParent: 0

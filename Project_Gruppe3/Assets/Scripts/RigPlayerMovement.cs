@@ -282,7 +282,11 @@ public class RigPlayerMovement : MonoBehaviour
 	public float bulletDistance;
 
 	public int helmet = 0;
-	
+    public AudioClip pew;
+	public AudioClip steam;
+	private AudioSource audioSrc;
+//	private AudioSource audioSrc2;
+
 	#endregion
 
 	
@@ -305,6 +309,10 @@ public class RigPlayerMovement : MonoBehaviour
 	{
 		pug = GameObject.FindGameObjectWithTag ("fer");
 		shotpoint = GameObject.FindGameObjectWithTag ("shotpoint");
+	    audioSrc = GetComponent<AudioSource> ();
+		///musicToShot = Resources.Load ("Sounds/pew");
+	//	musicToShot = Resources.Load ("Sounds/pew") as AudioClip;
+
 	}
 	
 	/// <summary>
@@ -344,7 +352,12 @@ public class RigPlayerMovement : MonoBehaviour
 			
 			// Jump
 			if (canJump && jumpFlag) {
+
+				//audioSrc.volume = volume * 0.5f; // multiplying it by 50% because effect iss still too loud...
+				//audioSrc.Play();
+				audioSrc.clip = steam;
 				jumpFlag = false;
+				audioSrc.Play();
 				GetComponent<Rigidbody> ().velocity = new Vector3 (GetComponent<Rigidbody> ().velocity.x, GetComponent<Rigidbody> ().velocity.y + CalculateJumpVerticalSpeed (), GetComponent<Rigidbody> ().velocity.z);
 			}
 			
@@ -367,6 +380,10 @@ public class RigPlayerMovement : MonoBehaviour
 	void  ShootWithWater (float sphereDistance)
 	{
 
+		//audioSrc2.clip (musicToShot);
+
+		audioSrc.clip = pew;
+		audioSrc.Play();
 		Vector3 startPosition = new Vector3 (transform.position.x,
 		                                     transform.position.y,
 		                                     transform.position.z);
