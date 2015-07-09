@@ -6,6 +6,9 @@ public class BasicFire : MonoBehaviour {
 	//set the prefab of the Projectile here
 	public GameObject projectilePrefab;
 
+	public AudioClip pew;
+	private AudioSource audioSrc;
+
 	GameObject evilCat;
 
 	// Use this for initialization
@@ -27,6 +30,11 @@ public class BasicFire : MonoBehaviour {
 			projectileRbInstance = projectileInstance.GetComponent<Rigidbody>();
 			const int SHOOTING_FORCE = 2000;
 			projectileRbInstance.AddForce(transform.forward * SHOOTING_FORCE);
+
+
+			audioSrc = GetComponent<AudioSource> ();
+			audioSrc.clip = pew;
+			audioSrc.Play();
 		}
 	
 	}

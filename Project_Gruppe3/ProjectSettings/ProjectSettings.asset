@@ -134,7 +134,11 @@ PlayerSettings:
     banner: {fileID: 0}
   androidGamepadSupportLevel: 0
   resolutionDialogBanner: {fileID: 0}
-  m_BuildTargetIcons: []
+  m_BuildTargetIcons:
+  - m_BuildTarget: 
+    m_Icons:
+    - m_Icon: {fileID: 0}
+      m_Size: 128
   m_BuildTargetBatching: []
   webPlayerTemplate: APPLICATION:Default
   m_TemplateCustomTags: {}
@@ -208,6 +212,7 @@ PlayerSettings:
   psp2NPTrophyPackPath: 
   psp2NPSupportGBMorGJP: 0
   psp2NPAgeRating: 12
+  psp2NPTitleDatPath: 
   psp2NPCommsID: 
   psp2NPCommunicationsID: 
   psp2NPCommsPassphrase: 
@@ -222,6 +227,7 @@ PlayerSettings:
   psp2PatchOriginalPackage: 
   psp2PackagePassword: F69AzBlax3CF3EDNhm3soLBPh71Yexui
   psp2KeystoneFile: 
+  psp2MemoryExpansionMode: 0
   psp2DRMType: 0
   psp2StorageType: 0
   psp2MediaCapacity: 0
@@ -366,6 +372,7 @@ PlayerSettings:
   XboxOnePackagingOverridePath: 
   XboxOneAppManifestOverridePath: 
   XboxOnePackageEncryption: 0
+  XboxOnePackageUpdateGranularity: 2
   XboxOneDescription: 
   XboxOneIsContentPackage: 0
   XboxOneEnableGPUVariability: 0

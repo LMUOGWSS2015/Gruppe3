@@ -7,7 +7,10 @@ public class Player : MonoBehaviour {
 
 	PlayerHealthDisplay healthDisplay;
 	PlayerHealth playerHealth;
-	
+
+	public AudioClip steam;
+	private AudioSource audioSrc;
+
 	// Use this for initialization
 	void Start () {
 		playerHealth = PlayerHealth.Instance;
@@ -15,10 +18,9 @@ public class Player : MonoBehaviour {
 		this.gameObject.AddComponent<PlayerHealthDisplay>();
 		healthDisplay = this.GetComponent<PlayerHealthDisplay>();
 
-		//****** TODO ******//
-		// MovePlayer - jump at least
-		// Shoot at cat
-
+		audioSrc = GetComponent<AudioSource> ();
+		audioSrc.clip = steam;
+		audioSrc.Play();
 	}
 	
 	// Update is called once per frame
@@ -27,6 +29,8 @@ public class Player : MonoBehaviour {
 
 		if (PlayerHealth.CurrentHealth < 5) {
 			Debug.Log ("Player is Dead");
+			audioSrc.Stop();
+
 			Destroy (this.gameObject);
 		}
 	}
