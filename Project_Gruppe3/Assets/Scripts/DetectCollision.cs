@@ -35,7 +35,8 @@ public class DetectCollision : MonoBehaviour {
 				Destroy (col.gameObject); 
 
 				//back to main game
-				Application.LoadLevel ("Level1");
+				Application.LoadLevel ("LastScene");
+
 			}
 		//TODO
 		//detect collision with cats

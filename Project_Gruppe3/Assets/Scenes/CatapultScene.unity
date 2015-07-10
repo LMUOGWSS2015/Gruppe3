@@ -342,7 +342,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 334509884}
   m_LocalRotation: {x: 0, y: 0, z: .707106888, w: .707106769}
-  m_LocalPosition: {x: 1.34000003, y: 2.5999999, z: 30.6599998}
+  m_LocalPosition: {x: 1.29999995, y: 14.1999998, z: 30.7000008}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -494,7 +494,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Helmets: 0'
+  m_Text: 'Helmets: 3'
 --- !u!222 &660613683
 CanvasRenderer:
   m_ObjectHideFlags: 0
