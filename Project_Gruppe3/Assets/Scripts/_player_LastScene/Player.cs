@@ -2,9 +2,7 @@
 using System.Collections;
 
 public class Player : MonoBehaviour {
-
-	//DO WHATEVER IS NEEDED HERE FOR THE PLAYER TO JUMP ON PLATFORMS OR WHATEVER
-
+	
 	PlayerHealthDisplay healthDisplay;
 	PlayerHealth playerHealth;
 
