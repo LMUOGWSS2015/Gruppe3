@@ -23,9 +23,6 @@ public class PlayerHealth : MonoBehaviour {
 				
 				SetMaxHealth (100);
 				SetCurrentHealth (100);
-
-				int life = HoldInformations.GetLife ();
-				helmets = life;
 			}
 			
 			return _instance;
@@ -45,10 +42,10 @@ public class PlayerHealth : MonoBehaviour {
 
 	public static int Helmets {
 		get {
-			return helmets;
+			return HoldInformations.GetLife ();
 		}
 		set {
-			helmets = value;
+			HoldInformations.SetLife(value);
 		}
 	}
 

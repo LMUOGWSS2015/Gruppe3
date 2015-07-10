@@ -15,6 +15,8 @@ GameObject:
   - 114: {fileID: 11496834}
   - 114: {fileID: 11415644}
   - 114: {fileID: 11462044}
+  - 114: {fileID: 11468294}
+  - 114: {fileID: 11494614}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -115,6 +117,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayerGameOver: 0
+--- !u!114 &11468294
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 160416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7d42d00ecc098647a9414200001cc2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  steam: {fileID: 0}
+--- !u!114 &11494614
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 160416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d176647218b9b77488cf1a5235dc9ae4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6
+  jumpSpeed: 20
+  gravity: 20
 --- !u!114 &11496834
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28a31088c4648754ba30de1936380ebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 166400, guid: cb24236f16112834abac61b8632aab1c, type: 2}
   pew: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:

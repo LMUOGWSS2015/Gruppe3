@@ -27,9 +27,16 @@ public class Player : MonoBehaviour {
 
 		if (PlayerHealth.CurrentHealth < 5) {
 			Debug.Log ("Player is Dead");
-			audioSrc.Stop();
+			audioSrc.Stop ();
 
 			Destroy (this.gameObject);
+
+			if (PlayerHealth.Helmets >= 1) {
+				PlayerHealth.Helmets -= 1;
+				Application.LoadLevel (Application.loadedLevel);
+			} else {
+				Application.LoadLevel ("terraNova");
+			}
 		}
 	}
 
