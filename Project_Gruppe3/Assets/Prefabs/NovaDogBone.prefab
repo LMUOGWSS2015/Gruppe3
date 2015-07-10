@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedForTheThrowUp: 0
-  destroySeconds: 5
+  destroySeconds: 8
   bounceSpeed: 2
   bounce: 2
   isJumping: 1
