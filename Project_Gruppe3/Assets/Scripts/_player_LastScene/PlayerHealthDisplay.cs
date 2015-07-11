@@ -23,6 +23,7 @@ public class PlayerHealthDisplay : MonoBehaviour {
 		Slider slider = healthBarSlider.GetComponent<Slider> ();
 
 		if (obj.gameObject.tag == "HairBall" && slider.value > 0) {
+			Debug.Log("Wanna Blink!");
 			BlinkPlayer (player); 
 			slider.value -= 10f;  //reduce health
 			PlayerHealth.CurrentHealth = 10;
@@ -36,6 +37,7 @@ public class PlayerHealthDisplay : MonoBehaviour {
 	
 	IEnumerator Blinking(Player obj, float seconds)
 	{
+		Debug.Log("Blinking!");
 		float duration = 8;
 		while (duration > 0f) {
 			obj.transform.GetComponent<Renderer>().enabled = !obj.transform.GetComponent<Renderer>().enabled;

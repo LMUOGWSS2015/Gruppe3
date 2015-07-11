@@ -4,7 +4,7 @@ using System.Collections;
 public class EvilProjectileCollision : MonoBehaviour {
 
 	void OnTriggerEnter(Collider obj) {
-		if (obj.gameObject.tag == "Player" || obj.gameObject.tag == "Projectile") {
+		if (obj.gameObject.tag == "Player") {
 			// destroy the hairball
 			Destroy(this.gameObject);
 		}

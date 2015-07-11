@@ -36,7 +36,10 @@ public class EvilBasicFire : MonoBehaviour {
 		hasShot = true;
 
 		player = GameObject.FindGameObjectWithTag ("Player");
-		transform.LookAt(player.transform);
+		Vector3 playerPostition = new Vector3(player.transform.position.x, 
+		                                      transform.position.y,
+		                                      player.transform.position.z) ;
+		this.transform.LookAt( playerPostition ) ;
 		
 		GameObject hairballInstance;
 		hairballInstance = (GameObject)Instantiate(hairballPrefab, transform.position, transform.rotation);

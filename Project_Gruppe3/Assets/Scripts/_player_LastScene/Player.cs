@@ -25,25 +25,25 @@ public class Player : MonoBehaviour {
 	void Update () {
 		healthDisplay.HelmetsTextController ();	
 
-		if (PlayerHealth.CurrentHealth < 5) {
-			Debug.Log ("Player is Dead");
-			audioSrc.Stop ();
 
-			Destroy (this.gameObject);
-
-			if (PlayerHealth.Helmets >= 1) {
-				PlayerHealth.Helmets -= 1;
-				Application.LoadLevel (Application.loadedLevel);
-			} else {
-				Application.LoadLevel ("terraNova");
-			}
-		}
 	}
 
 	// player was hit
 	void OnTriggerEnter(Collider obj) {
 		if (PlayerHealth.CurrentHealth > 0) {
 			healthDisplay.UpdateSliderController (obj, this);
+		} else if (PlayerHealth.CurrentHealth < 5) {
+			Debug.Log ("Player is Dead");
+			audioSrc.Stop ();
+			
+			Destroy (this.gameObject);
+			
+			if (PlayerHealth.Helmets >= 1) {
+				PlayerHealth.Helmets -= 1;
+				Application.LoadLevel (Application.loadedLevel);
+			} else {
+				Application.LoadLevel ("Level1");
+			}
 		}
 	}
 }

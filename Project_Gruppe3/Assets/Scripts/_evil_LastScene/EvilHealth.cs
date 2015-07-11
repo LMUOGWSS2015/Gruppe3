@@ -18,7 +18,7 @@ public class EvilHealth : MonoBehaviour{
 				_instance = GameObject.FindObjectOfType<EvilHealth>();
 				
 				//Tell unity not to destroy this object when loading a new scene!
-				DontDestroyOnLoad(_instance.gameObject);
+				//DontDestroyOnLoad(_instance.gameObject);
 
 				//let EvilCat live a little longer than the pug
 				SetMaxHealth (145);

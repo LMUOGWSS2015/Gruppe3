@@ -19,23 +19,28 @@ public class BasicFire : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {		
 		evilCat = GameObject.FindGameObjectWithTag ("Evil");
-		transform.LookAt(evilCat.transform);
+		if (evilCat != null) {
 
-		if (Input.GetButtonDown ("Fire1")) { //shoot when left mouse button is clicked
-			GameObject projectileInstance;
-			projectileInstance = (GameObject)Instantiate(projectilePrefab, transform.position, transform.rotation);
-			projectileInstance.name = "Projectile";
+			Vector3 evilCatPostition = new Vector3(evilCat.transform.position.x, 
+			                                      transform.position.y,
+			                                      evilCat.transform.position.z) ;
+			this.transform.LookAt( evilCatPostition ) ;
+
+			if (Input.GetButtonDown ("Fire1")) { //shoot when left mouse button is clicked
+				GameObject projectileInstance;
+				projectileInstance = (GameObject)Instantiate (projectilePrefab, transform.position, transform.rotation);
+				projectileInstance.name = "Projectile";
 			
-			Rigidbody projectileRbInstance;
-			projectileRbInstance = projectileInstance.GetComponent<Rigidbody>();
-			const int SHOOTING_FORCE = 2000;
-			projectileRbInstance.AddForce(transform.forward * SHOOTING_FORCE);
+				Rigidbody projectileRbInstance;
+				projectileRbInstance = projectileInstance.GetComponent<Rigidbody> ();
+				const int SHOOTING_FORCE = 2000;
+				projectileRbInstance.AddForce (transform.forward * SHOOTING_FORCE);
 
 
-			audioSrc = GetComponent<AudioSource> ();
-			audioSrc.clip = pew;
-			audioSrc.Play();
+				audioSrc = GetComponent<AudioSource> ();
+				audioSrc.clip = pew;
+				audioSrc.Play ();
+			}
 		}
-	
 	}
 }

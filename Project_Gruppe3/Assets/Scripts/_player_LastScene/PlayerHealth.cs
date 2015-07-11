@@ -19,7 +19,7 @@ public class PlayerHealth : MonoBehaviour {
 				_instance = GameObject.FindObjectOfType<PlayerHealth>();
 				
 				//Tell unity not to destroy this object when loading a new scene!
-				DontDestroyOnLoad(_instance.gameObject);
+				//DontDestroyOnLoad(_instance.gameObject);
 				
 				SetMaxHealth (100);
 				SetCurrentHealth (100);
