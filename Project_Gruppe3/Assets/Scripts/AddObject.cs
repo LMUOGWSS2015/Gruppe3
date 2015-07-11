@@ -16,14 +16,14 @@ public class AddObject : GazeMonobehaviour {
 	public int maxAttempt = 10;
 	private int currentScale = 2; 
 	public Vector3 gazePosition;
-	public float timeMouseOver= 0.0f;
 	public int tempHoldInfo;
-	
+	public bool displayText = false;
+	public Font MyFont;
+	public GameObject sound;
+
 	
 	void Start () {
 		timeLimit = 10.0f;
-		
-		//Definition of object position
 		positions = new [] { new Vector3(-7f,14f,12f), new Vector3(0f,14f,12f),new Vector3(7f,14f,12f),
 			new Vector3(-7f,8f,12f),new Vector3(0f,8f,12f),
 			new Vector3(7f,8f,12f),new Vector3(-7f,2f,12f),new Vector3(0f,2f,12f),
@@ -87,14 +87,12 @@ public class AddObject : GazeMonobehaviour {
 	void Update () {
 		//mouseOverTimer ();
 		gazePosition = SMIGazeController.Instance.GetSample ().averagedEye.gazePosInUnityScreenCoords ();
-		//Licht trifft auf Objekt + Ist es das gesuchte Objekt ? + Zeit ist noch nicht abgelaufen
-		//BG: timeMouseOverBool deleted
 		if (randomObject.name == GetLightedGameObjectMouse() && (timeLimit > 0)) {
 			//back to main game
 			tempHoldInfo = HoldInformations.GetLife();
 			tempHoldInfo = tempHoldInfo +1;
 			HoldInformations.SetLife(tempHoldInfo);
-			
+			displayText = true;
 			Application.LoadLevel ("Level1");
 			
 			
@@ -105,7 +103,7 @@ public class AddObject : GazeMonobehaviour {
 			tempHoldInfo = HoldInformations.GetLife();
 			tempHoldInfo = tempHoldInfo +1;
 			HoldInformations.SetLife(tempHoldInfo);
-			
+			displayText = true;
 			Application.LoadLevel ("Level1");
 			
 		}
@@ -167,15 +165,30 @@ public class AddObject : GazeMonobehaviour {
 	}
 	
 	//Zeitdisplay in der GUI :) 
+	//Zeitdisplay in der GUI :) 
 	void OnGUI(){
+		GUI.skin.font = MyFont;
+		
 		if (timeLimit > 0) {
 			GUI.Label (new Rect (125, 25, 200, 100), "Time Remaining: " + (int)timeLimit);
-		} else {
+			
+			
+			if (displayText == true) {
+				sound.GetComponent<AudioSource>().Play();
+				GUI.Label (new Rect (300, 150, 600, 100), "<size=30>YOU WON</size>");
+		
+				
+				//GUI.Label (new Rect (300, 150, 600, 100), "<size=30>+1 Hat</size>");
+			}
+		} 
+		else {
 			GUI.Label(new Rect(125, 25, 100, 100), "Time is up!");
+			GUI.Label (new Rect (300, 150, 600, 100), "<size=30>YOU LOST</size>");
 			//back to main game
 			//Application.LoadLevel ("Level1");
 		}
 		GUI.Label (new Rect (125, 150, 500, 100), "Finde: " + randomObject.name);
+		
 		
 	}
 	
