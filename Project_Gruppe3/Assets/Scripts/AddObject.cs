@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using iView;
+using UnityEngine.UI;
 
 
 public class AddObject : GazeMonobehaviour {
@@ -20,9 +21,11 @@ public class AddObject : GazeMonobehaviour {
 	public bool displayText = false;
 	public Font MyFont;
 	public GameObject sound;
+	public Text wonText;
 
 	
 	void Start () {
+		wonText.enabled = false;
 		timeLimit = 10.0f;
 		positions = new [] { new Vector3(-7f,14f,12f), new Vector3(0f,14f,12f),new Vector3(7f,14f,12f),
 			new Vector3(-7f,8f,12f),new Vector3(0f,8f,12f),
@@ -78,7 +81,6 @@ public class AddObject : GazeMonobehaviour {
 		
 		//Creating random objects
 		randomObject = objectArray[Random.Range(0,objectArray.Length)];
-		Debug.Log ("Find:" + randomObject);
 		
 		
 	}
@@ -89,22 +91,31 @@ public class AddObject : GazeMonobehaviour {
 		gazePosition = SMIGazeController.Instance.GetSample ().averagedEye.gazePosInUnityScreenCoords ();
 		if (randomObject.name == GetLightedGameObjectMouse() && (timeLimit > 0)) {
 			//back to main game
+			wonText.enabled = true;
+			sound.GetComponent<AudioSource>().Play();
 			tempHoldInfo = HoldInformations.GetLife();
 			tempHoldInfo = tempHoldInfo +1;
 			HoldInformations.SetLife(tempHoldInfo);
 			displayText = true;
-			Application.LoadLevel ("Level1");
+			if(!(sound.GetComponent<AudioSource>().isPlaying)){
+				Application.LoadLevel ("Level1");
+			}
+
 			
 			
 		}
 		
 		else if(randomObject.name == GetLightedGameObjectEyes() && (timeLimit >0)){
 			//back to main game
+			wonText.enabled = true;
+			sound.GetComponent<AudioSource>().Play();
 			tempHoldInfo = HoldInformations.GetLife();
 			tempHoldInfo = tempHoldInfo +1;
 			HoldInformations.SetLife(tempHoldInfo);
 			displayText = true;
-			Application.LoadLevel ("Level1");
+			if(!(sound.GetComponent<AudioSource>().isPlaying)){
+				Application.LoadLevel ("Level1");
+			}
 			
 		}
 		else {
@@ -129,7 +140,6 @@ public class AddObject : GazeMonobehaviour {
 		while(inUse[index] && ++attempt < maxAttempt);
 		
 		inUse [index] = true;
-		Debug.Log (positions[index]);
 		return positions [index];
 	}
 	//Method: Get the Object which is hovered
@@ -171,15 +181,7 @@ public class AddObject : GazeMonobehaviour {
 		
 		if (timeLimit > 0) {
 			GUI.Label (new Rect (125, 25, 200, 100), "Time Remaining: " + (int)timeLimit);
-			
-			
-			if (displayText == true) {
-				sound.GetComponent<AudioSource>().Play();
-				GUI.Label (new Rect (300, 150, 600, 100), "<size=30>YOU WON</size>");
-		
-				
-				//GUI.Label (new Rect (300, 150, 600, 100), "<size=30>+1 Hat</size>");
-			}
+	
 		} 
 		else {
 			GUI.Label(new Rect(125, 25, 100, 100), "Time is up!");
@@ -187,7 +189,7 @@ public class AddObject : GazeMonobehaviour {
 			//back to main game
 			//Application.LoadLevel ("Level1");
 		}
-		GUI.Label (new Rect (125, 150, 500, 100), "Finde: " + randomObject.name);
+		GUI.Label (new Rect (125, 150, 500, 100), "Find: " + randomObject.name);
 		
 		
 	}
