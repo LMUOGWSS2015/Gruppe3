@@ -46,6 +46,7 @@ GameObject:
   - 65: {fileID: 6583090}
   - 82: {fileID: 8269184}
   - 114: {fileID: 11486126}
+  - 54: {fileID: 5451012}
   m_Layer: 5
   m_Name: NovaCat
   m_TagString: Untagged
@@ -1617,6 +1618,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 189700}
   m_Mesh: {fileID: 4300046, guid: b953ff9558d2a4cc7aef549a3f6d9be9, type: 3}
+--- !u!54 &5451012
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 105538}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &6540066
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1650,7 +1666,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5cf3447a18f3a4d798d43b3d6594c534, type: 3}
+  m_audioClip: {fileID: 8300000, guid: fa6a216f4b93a41258260dd46e3337f4, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

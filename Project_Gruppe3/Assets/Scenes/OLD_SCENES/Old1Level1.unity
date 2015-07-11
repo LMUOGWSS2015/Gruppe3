@@ -2365,7 +2365,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Helmets: 3'
+  m_Text: 'Hats: 3'
 --- !u!222 &497329374
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5319,7 +5319,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Score: 300'
+  m_Text: 'Score: 0'
 --- !u!222 &1094112025
 CanvasRenderer:
   m_ObjectHideFlags: 0
