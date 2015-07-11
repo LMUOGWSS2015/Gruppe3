@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: .00999999978
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: .211999997, g: .226999998, b: .259000003, a: 1}
+  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
   m_AmbientEquatorColor: {r: .114, g: .125, b: .133000001, a: 1}
   m_AmbientGroundColor: {r: .0469999984, g: .0430000015, b: .0350000001, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: .5
   m_FlareStrength: 1
@@ -125,7 +125,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: bacbbb124f43e45138011bccc16a4610, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: bacbbb124f43e45138011bccc16a4610, type: 3}
       propertyPath: m_LocalScale.x
@@ -138,6 +138,10 @@ Prefab:
     - target: {fileID: 400008, guid: bacbbb124f43e45138011bccc16a4610, type: 3}
       propertyPath: m_LocalScale.z
       value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: bacbbb124f43e45138011bccc16a4610, type: 3}
+      propertyPath: m_Name
+      value: Penguin
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bacbbb124f43e45138011bccc16a4610, type: 3}
@@ -167,6 +171,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 8, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1680249337}
   - {fileID: 815065448}
   - {fileID: 1036413855}
   - {fileID: 866610347}
@@ -176,7 +181,6 @@ Transform:
   - {fileID: 873619521}
   - {fileID: 1526881478}
   - {fileID: 628317441}
-  - {fileID: 1680249337}
   m_Father: {fileID: 0}
   m_RootOrder: 3
 --- !u!1 &266455680
@@ -314,6 +318,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d8b391a0dcca7495a9374363aa5feb9f, type: 3}
+      propertyPath: m_Name
+      value: Dolly
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8b391a0dcca7495a9374363aa5feb9f, type: 3}
   m_IsPrefabParent: 0
@@ -431,7 +439,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: acabbeec2d7de4117aab2039429babab, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: acabbeec2d7de4117aab2039429babab, type: 3}
       propertyPath: m_LocalScale.x
@@ -444,6 +452,10 @@ Prefab:
     - target: {fileID: 400000, guid: acabbeec2d7de4117aab2039429babab, type: 3}
       propertyPath: m_LocalScale.z
       value: .600000024
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: acabbeec2d7de4117aab2039429babab, type: 3}
+      propertyPath: m_Name
+      value: Alien
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: acabbeec2d7de4117aab2039429babab, type: 3}
@@ -485,7 +497,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 78cbc6a9265644c81a52e76e2e36fa0e, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 78cbc6a9265644c81a52e76e2e36fa0e, type: 3}
+      propertyPath: m_Name
+      value: Pumpkin
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 78cbc6a9265644c81a52e76e2e36fa0e, type: 3}
@@ -544,6 +560,10 @@ Prefab:
     - target: {fileID: 400008, guid: 8b654e1c9467c4fd281bb60752fa2b19, type: 3}
       propertyPath: m_LocalScale.z
       value: .00700000022
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 8b654e1c9467c4fd281bb60752fa2b19, type: 3}
+      propertyPath: m_Name
+      value: Gift
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8b654e1c9467c4fd281bb60752fa2b19, type: 3}
@@ -611,6 +631,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: .600000024
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 64aed0fd1c53e4dc5b5703414d685c82, type: 3}
+      propertyPath: m_Name
+      value: Giraffe
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 64aed0fd1c53e4dc5b5703414d685c82, type: 3}
   m_IsPrefabParent: 0
@@ -651,7 +675,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4991c889da2c34991933d4db120b0762, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4991c889da2c34991933d4db120b0762, type: 3}
       propertyPath: m_LocalScale.x
@@ -664,6 +688,10 @@ Prefab:
     - target: {fileID: 400000, guid: 4991c889da2c34991933d4db120b0762, type: 3}
       propertyPath: m_LocalScale.z
       value: .300000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4991c889da2c34991933d4db120b0762, type: 3}
+      propertyPath: m_Name
+      value: Star
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4991c889da2c34991933d4db120b0762, type: 3}
@@ -1001,6 +1029,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: .400000006
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e31c7d9cb59c44cfb84a5546f370333a, type: 3}
+      propertyPath: m_Name
+      value: Bear
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e31c7d9cb59c44cfb84a5546f370333a, type: 3}
   m_IsPrefabParent: 0
@@ -1127,6 +1159,10 @@ Prefab:
     - target: {fileID: 400000, guid: ef6a3f440d27c419586ef0bc4ae658d7, type: 3}
       propertyPath: m_LocalScale.z
       value: .0299999993
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ef6a3f440d27c419586ef0bc4ae658d7, type: 3}
+      propertyPath: m_Name
+      value: Apple
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ef6a3f440d27c419586ef0bc4ae658d7, type: 3}
@@ -1341,6 +1377,10 @@ Prefab:
     - target: {fileID: 400008, guid: df30bc9539db14fe39caa1abe09ca110, type: 3}
       propertyPath: m_LocalScale.z
       value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: df30bc9539db14fe39caa1abe09ca110, type: 3}
+      propertyPath: m_Name
+      value: Car
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: df30bc9539db14fe39caa1abe09ca110, type: 3}
