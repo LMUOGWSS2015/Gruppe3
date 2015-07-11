@@ -64,28 +64,28 @@ public class MoveCat : MonoBehaviour {
 	public void AddVectorsToList ()
 	{
 		var ladder = GameObject.Find ("Quad_Ladder").transform.position;
-		positionsList.Add (new Vector3(ladder.x, ladder.y + 1.17f, ladder.z)); // Ladder
+		positionsList.Add (new Vector3(ladder.x, ladder.y + 0.17f, ladder.z)); // Ladder
 		
 		var hay = GameObject.Find ("Hay_B").transform.position;
-		positionsList.Add (new Vector3(hay.x, hay.y + 1.17f, hay.z)); //Hay
+		positionsList.Add (new Vector3(hay.x, hay.y + 0.17f, hay.z)); //Hay
 		
 		var table = GameObject.Find ("Plane_Table").transform.position;
-		positionsList.Add (new Vector3(table.x, table.y + 1.17f, table.z)); // Table
+		positionsList.Add (new Vector3(table.x, table.y + 0.17f, table.z)); // Table
 		
 		var barrel = GameObject.Find ("Plane_Barrel").transform.position;
-		positionsList.Add (new Vector3(barrel.x, barrel.y + 1.17f, barrel.z)); // Barrel
+		positionsList.Add (new Vector3(barrel.x, barrel.y + 0.17f, barrel.z)); // Barrel
 		
 		var floorCage = GameObject.Find ("Quad_FloorCage").transform.position;
-		positionsList.Add (new Vector3(floorCage.x, floorCage.y + 1.17f, floorCage.z)); // FloorCage
+		positionsList.Add (new Vector3(floorCage.x, floorCage.y + 0.17f, floorCage.z)); // FloorCage
 		
 		var pillarD1 = GameObject.Find ("Quad_PillarD1").transform.position;
-		positionsList.Add (new Vector3(pillarD1.x, pillarD1.y + 1.17f, pillarD1.z)); // Pillar Back-Front
+		positionsList.Add (new Vector3(pillarD1.x, pillarD1.y + 0.17f, pillarD1.z)); // Pillar Back-Front
 		
 		var pillarD2 = GameObject.Find ("Quad_PillarD2").transform.position;
-		positionsList.Add (new Vector3(pillarD2.x, pillarD2.y + 1.17f, pillarD2.z)); // Pillar Back-Back
+		positionsList.Add (new Vector3(pillarD2.x, pillarD2.y + 0.17f, pillarD2.z)); // Pillar Back-Back
 		
 		var pillarD = GameObject.Find ("Quad_PillarD").transform.position;
-		positionsList.Add (new Vector3(pillarD.x, pillarD.y + 1.17f, pillarD.z)); // Pillar Front-Back
+		positionsList.Add (new Vector3(pillarD.x, pillarD.y + 0.17f, pillarD.z)); // Pillar Front-Back
 	}
 	
 	Vector3 CalculatePositionFromList () {

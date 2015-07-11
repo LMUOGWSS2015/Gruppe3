@@ -4,7 +4,7 @@ using System.Collections;
 public class ProjectileCollision : MonoBehaviour {
 
 	void OnTriggerEnter(Collider obj) {
-		if (obj.gameObject.tag == "Evil" || obj.gameObject.tag == "HairBall") {
+		if (obj.gameObject.tag == "Evil") {
 			// destroy the projectile
 			Destroy(this.gameObject);
 		}

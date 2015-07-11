@@ -13,14 +13,12 @@ public class BasicFire : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		evilCat = GameObject.FindGameObjectWithTag ("Evil");	
 	}
 	
 	// Update is called once per frame
 	void Update () {		
-		evilCat = GameObject.FindGameObjectWithTag ("Evil");
 		if (evilCat != null) {
-
 			Vector3 evilCatPostition = new Vector3(evilCat.transform.position.x, 
 			                                      transform.position.y,
 			                                      evilCat.transform.position.z) ;
