@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu/Menu.unity
   - enabled: 1
-    path: Assets/Scenes/Level1.unity
+    path: Assets/Scenes/Old1Level1.unity
   - enabled: 1
     path: Assets/Scenes/BonusLevelNew.unity
   - enabled: 1
