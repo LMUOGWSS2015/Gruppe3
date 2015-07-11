@@ -3,13 +3,23 @@ using System.Collections;
 
 public class MenuManagerScript : MonoBehaviour {
 
-	public static bool eyetrackingOn;
-	public void StartGame(){
+	public static bool isEyetrackingOn;
 
-		eyetrackingOn = ToogleEyetracking.toggleEyetracking;
+	EyeTrackingToggler eyeTrackingToggler;
+
+	public void StartGame(){
+		this.gameObject.AddComponent<EyeTrackingToggler>();
+		eyeTrackingToggler = this.GetComponent<EyeTrackingToggler>();
+
+		eyeTrackingToggler.CheckEyetrackingToggle ();
+		isEyetrackingOn = EyeTrackingToggler.ToggleEyetracking;
+		if (isEyetrackingOn) {
+			Debug.Log ("Eyetracking is ON");
+		} else {
+			Debug.Log ("Eyetracking is OFF");
+		}
+
 		Application.LoadLevel("Level1");
 		HoldInformations.SetLife (3);
-	}
-
- 
+	} 
 }

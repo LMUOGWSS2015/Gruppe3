@@ -24,6 +24,7 @@ TagManager:
   - Skateboard
   - wool
   - shotpoint
+  - ToogleEyetracking
   layers:
   - Default
   - TransparentFX

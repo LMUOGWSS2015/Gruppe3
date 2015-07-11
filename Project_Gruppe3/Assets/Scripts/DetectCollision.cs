@@ -76,13 +76,13 @@ public class DetectCollision : MonoBehaviour {
 		if (lives <= 0) {
 			Debug.Log ("Game Over!");
 			anim.SetTrigger ("IsGameOver");
-			Application.LoadLevel("Menu");
+			Application.LoadLevel("NovaMenu");
 			
 			HoldInformations.SetLife (1);
 			/*
   				restartTimer+= Time.deltaTime;
 				if(restartTimer >= restartDelay){
-					Application.LoadLevel("Menu");
+					Application.LoadLevel("NovaMenu");
 				}
 */
 		} else {

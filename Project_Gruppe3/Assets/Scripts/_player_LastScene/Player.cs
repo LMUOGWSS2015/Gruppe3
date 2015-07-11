@@ -24,8 +24,6 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		healthDisplay.HelmetsTextController ();	
-
-
 	}
 
 	// player was hit
@@ -42,7 +40,7 @@ public class Player : MonoBehaviour {
 				PlayerHealth.Helmets -= 1;
 				Application.LoadLevel (Application.loadedLevel);
 			} else {
-				Application.LoadLevel ("Level1");
+				Application.LoadLevel ("NovaMenu");
 			}
 		}
 	}

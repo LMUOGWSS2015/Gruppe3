@@ -61,7 +61,7 @@ public class PugLife : MonoBehaviour {
 			restartTimer+= Time.deltaTime;
 			
 			if(restartTimer >= restartDelay){
-				Application.LoadLevel("Menu");
+				Application.LoadLevel("NovaMenu");
 			}
 		}
 	}
