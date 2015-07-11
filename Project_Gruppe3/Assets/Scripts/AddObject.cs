@@ -18,12 +18,12 @@ public class AddObject : GazeMonobehaviour {
 	private int currentScale = 2; 
 	public Vector3 gazePosition;
 	public int tempHoldInfo;
-	public bool displayText = false;
 	public Font MyFont;
 	public GameObject sound;
 	public Text wonText;
 	public bool hasPlayed = false; 
 	public bool lostGame = true;
+	public AudioSource audio;
 
 	
 	void Start () {
@@ -98,7 +98,8 @@ public class AddObject : GazeMonobehaviour {
 			if (hasPlayed == false)
 			{	lostGame = false;
 				hasPlayed = true;
-				sound.GetComponent<AudioSource>().Play();
+				audio = sound.GetComponent<AudioSource>();
+				audio.Play();
 			}
 			else
 			{
@@ -108,12 +109,8 @@ public class AddObject : GazeMonobehaviour {
 			tempHoldInfo = HoldInformations.GetLife();
 			tempHoldInfo = tempHoldInfo +1;
 			HoldInformations.SetLife(tempHoldInfo);
-			displayText = true;
-			//Application.LoadLevel ("Level1");
-
-			
-		}
 		
+		}
 		else if(randomObject.name == GetLightedGameObjectEyes() && (timeLimit >0)){
 			//back to main game
 
@@ -131,8 +128,14 @@ public class AddObject : GazeMonobehaviour {
 			tempHoldInfo = HoldInformations.GetLife();
 			tempHoldInfo = tempHoldInfo +1;
 			HoldInformations.SetLife(tempHoldInfo);
-			//Application.LoadLevel ("Level1");
+
 			
+		}
+		else if(hasPlayed == true){
+			if(!audio.isPlaying){
+				Application.LoadLevel ("Level1");
+			}
+
 		}
 		else {
 			timeLimit -= Time.deltaTime;
@@ -203,9 +206,10 @@ public class AddObject : GazeMonobehaviour {
 			if(lostGame == true){
 				GUI.Label(new Rect(125, 25, 100, 100), "Time is up!");
 				GUI.Label (new Rect (300, 150, 600, 100), "<size=30>YOU LOST</size>");
+				//back to main game
+				Application.LoadLevel ("Level1");
 			}
-			//back to main game
-			//Application.LoadLevel ("Level1");
+
 		}
 		GUI.Label (new Rect (125, 150, 500, 100), "Find: " + randomObject.name);
 		
