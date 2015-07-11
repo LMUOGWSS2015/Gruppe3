@@ -22,6 +22,7 @@ public class AddObject : GazeMonobehaviour {
 	public Font MyFont;
 	public GameObject sound;
 	public Text wonText;
+	public bool hasPlayed = false; 
 
 	
 	void Start () {
@@ -92,30 +93,42 @@ public class AddObject : GazeMonobehaviour {
 		if (randomObject.name == GetLightedGameObjectMouse() && (timeLimit > 0)) {
 			//back to main game
 			wonText.enabled = true;
-			sound.GetComponent<AudioSource>().Play();
+			Debug.Log(hasPlayed);
+			if (hasPlayed == false)
+			{	
+				hasPlayed = true;
+				sound.GetComponent<AudioSource>().Play();
+			}
+			else
+			{
+				hasPlayed = true;
+			}
+
 			tempHoldInfo = HoldInformations.GetLife();
 			tempHoldInfo = tempHoldInfo +1;
 			HoldInformations.SetLife(tempHoldInfo);
 			displayText = true;
-			if(!(sound.GetComponent<AudioSource>().isPlaying)){
-				Application.LoadLevel ("Level1");
-			}
+			Application.LoadLevel ("Level1");
 
-			
 			
 		}
 		
 		else if(randomObject.name == GetLightedGameObjectEyes() && (timeLimit >0)){
 			//back to main game
+			if (hasPlayed == false)
+			{	
+				hasPlayed = true;
+				sound.GetComponent<AudioSource>().Play();
+			}
+			else
+			{
+				hasPlayed = true;
+			}
 			wonText.enabled = true;
-			sound.GetComponent<AudioSource>().Play();
 			tempHoldInfo = HoldInformations.GetLife();
 			tempHoldInfo = tempHoldInfo +1;
 			HoldInformations.SetLife(tempHoldInfo);
-			displayText = true;
-			if(!(sound.GetComponent<AudioSource>().isPlaying)){
-				Application.LoadLevel ("Level1");
-			}
+			Application.LoadLevel ("Level1");
 			
 		}
 		else {
