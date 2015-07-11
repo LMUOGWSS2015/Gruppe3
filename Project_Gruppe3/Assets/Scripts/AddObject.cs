@@ -35,6 +35,7 @@ public class AddObject : GazeMonobehaviour {
 			new Vector3(7f,4f,12f), new Vector3(1f,-1f,12f)};			
 		objectArray = new GameObject[10];
 		inUse = new bool[10];
+
 		
 		//Adding objects
 		GameObject alien = GameObject.Find ("Alien");
@@ -154,10 +155,9 @@ public class AddObject : GazeMonobehaviour {
 		do
 		{	
 			index =  Random.Range(0,positions.Length);
-			
 		}
 		while(inUse[index] && ++attempt < maxAttempt);
-		
+
 		inUse [index] = true;
 		return positions [index];
 	}
