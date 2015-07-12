@@ -17980,6 +17980,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 546c11f324c994d7eb73ef255b376743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedForTheThrowUp: 0
+  bounceSpeed: 0
+  bounce: 0
+  isJumping: 1
+  counter: 0
 --- !u!1001 &553474895
 Prefab:
   m_ObjectHideFlags: 0
@@ -23089,11 +23094,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20b7344782b7249de8d454e76381c57a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedForTheThrowUp: 0
-  bounceSpeed: 0
-  bounce: 0
-  isJumping: 1
-  counter: 0
 --- !u!4 &721589067 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 65b5d7e653b74f349a9d6f44664b81c2, type: 2}
@@ -37761,6 +37761,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 546c11f324c994d7eb73ef255b376743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedForTheThrowUp: 0
+  bounceSpeed: 0
+  bounce: 0
+  isJumping: 1
+  counter: 0
 --- !u!1001 &1106165856
 Prefab:
   m_ObjectHideFlags: 0
@@ -41796,7 +41801,7 @@ Transform:
   - {fileID: 208131656}
   - {fileID: 1504065596}
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 29
 --- !u!1001 &1201944367
 Prefab:
   m_ObjectHideFlags: 0
@@ -42650,6 +42655,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 546c11f324c994d7eb73ef255b376743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedForTheThrowUp: 0
+  bounceSpeed: 0
+  bounce: 0
+  isJumping: 1
+  counter: 0
 --- !u!1001 &1234743032
 Prefab:
   m_ObjectHideFlags: 0
@@ -43435,6 +43445,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 546c11f324c994d7eb73ef255b376743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedForTheThrowUp: 0
+  bounceSpeed: 0
+  bounce: 0
+  isJumping: 1
+  counter: 0
 --- !u!1 &1251211703
 GameObject:
   m_ObjectHideFlags: 0
@@ -43697,7 +43712,7 @@ Transform:
   - {fileID: 613543958}
   - {fileID: 572834883}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
 --- !u!4 &1253652246 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 5d510085e5cda244d9f372b0ccaff089, type: 2}
@@ -45944,6 +45959,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 546c11f324c994d7eb73ef255b376743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedForTheThrowUp: 0
+  bounceSpeed: 0
+  bounce: 0
+  isJumping: 1
+  counter: 0
 --- !u!1001 &1321136758
 Prefab:
   m_ObjectHideFlags: 0
@@ -50512,6 +50532,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 546c11f324c994d7eb73ef255b376743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedForTheThrowUp: 0
+  bounceSpeed: 0
+  bounce: 0
+  isJumping: 1
+  counter: 0
 --- !u!1001 &1465732428
 Prefab:
   m_ObjectHideFlags: 0
@@ -54203,6 +54228,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 546c11f324c994d7eb73ef255b376743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedForTheThrowUp: 0
+  bounceSpeed: 0
+  bounce: 0
+  isJumping: 1
+  counter: 0
 --- !u!1001 &1566294707
 Prefab:
   m_ObjectHideFlags: 0
@@ -59415,6 +59445,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 546c11f324c994d7eb73ef255b376743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedForTheThrowUp: 0
+  bounceSpeed: 0
+  bounce: 0
+  isJumping: 1
+  counter: 0
 --- !u!1001 &1691823309
 Prefab:
   m_ObjectHideFlags: 0
@@ -60173,6 +60208,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 546c11f324c994d7eb73ef255b376743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedForTheThrowUp: 0
+  bounceSpeed: 0
+  bounce: 0
+  isJumping: 1
+  counter: 0
 --- !u!54 &1713808972
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -61452,7 +61492,7 @@ Transform:
   - {fileID: 32972201}
   - {fileID: 1380558686}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
 --- !u!1001 &1747520861
 Prefab:
   m_ObjectHideFlags: 0
@@ -65810,7 +65850,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22406190, guid: 340d4c7bea43d4b6c8a9ec7ebf17c483, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 82
+      value: 76
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436724, guid: 340d4c7bea43d4b6c8a9ec7ebf17c483, type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 22498318, guid: 340d4c7bea43d4b6c8a9ec7ebf17c483, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 36
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 340d4c7bea43d4b6c8a9ec7ebf17c483, type: 2}
@@ -66854,6 +66902,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 546c11f324c994d7eb73ef255b376743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedForTheThrowUp: 0
+  bounceSpeed: 0
+  bounce: 0
+  isJumping: 1
+  counter: 0
 --- !u!1001 &1945442236
 Prefab:
   m_ObjectHideFlags: 0
@@ -73629,6 +73682,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 546c11f324c994d7eb73ef255b376743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedForTheThrowUp: 0
+  bounceSpeed: 0
+  bounce: 0
+  isJumping: 1
+  counter: 0
 --- !u!1001 &2140614202
 Prefab:
   m_ObjectHideFlags: 0
