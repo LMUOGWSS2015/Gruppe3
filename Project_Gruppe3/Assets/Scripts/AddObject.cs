@@ -8,7 +8,8 @@ public class AddObject : GazeMonobehaviour {
 	
 	Ray ray;
 	RaycastHit hit;
-	
+
+	public Vector3 temp;
 	public GameObject[] objectArray;
 	public GameObject randomObject;
 	public float timeLimit;
@@ -24,6 +25,7 @@ public class AddObject : GazeMonobehaviour {
 	public bool hasPlayed = false; 
 	public bool lostGame = true;
 	public AudioSource audio;
+	public static int count;
 
 	
 	void Start () {
@@ -39,33 +41,43 @@ public class AddObject : GazeMonobehaviour {
 		
 		//Adding objects
 		GameObject alien = GameObject.Find ("Alien");
+		count = 0;
 		alien.transform.position = GetPosition ();
 		
 		GameObject apple = GameObject.Find ("Apple");
+		count++;
 		apple.transform.position = GetPosition ();
 		
 		GameObject bear = GameObject.Find ("Bear");
+		count++;
 		bear.transform.position = GetPosition ();
 		
 		GameObject car = GameObject.Find ("Car");
+		count++;
 		car.transform.position = GetPosition ();
-		
+
 		GameObject dolly = GameObject.Find ("Dolly");
+		count++;
 		dolly.transform.position = GetPosition ();
 		
 		GameObject gift = GameObject.Find ("Gift");
+		count++;
 		gift.transform.position = GetPosition ();
 		
 		GameObject giraffe = GameObject.Find ("Giraffe");
+		count++;
 		giraffe.transform.position = GetPosition ();
 		
 		GameObject star = GameObject.Find ("Star");
+		count++;
 		star.transform.position = GetPosition (); 
 		
 		GameObject penguin = GameObject.Find ("Penguin");
+		count++;
 		penguin.transform.position = GetPosition ();
 		
 		GameObject pumpkin = GameObject.Find ("Pumpkin");
+		count++;
 		pumpkin.transform.position = GetPosition ();
 		
 		//Adding objects to array
@@ -158,8 +170,19 @@ public class AddObject : GazeMonobehaviour {
 		}
 		while(inUse[index] && ++attempt < maxAttempt);
 
-		inUse [index] = true;
-		return positions [index];
+		if (count == 9) {
+			for(int i = 0; i<inUse.Length; i++){
+				if(inUse[i] == false){
+					temp =  positions[i];
+				}
+
+			}
+			return temp;
+
+		} else {
+			inUse [index] = true;
+			return positions [index];
+		}
 	}
 	//Method: Get the Object which is hovered
 	string GetLightedGameObjectMouse(){
