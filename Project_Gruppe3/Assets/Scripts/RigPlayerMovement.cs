@@ -253,6 +253,9 @@ public class RigPlayerMovement : MonoBehaviour
 	
 	// Inputs Cache
 	private bool jumpFlag = false;
+
+	private static bool reallyPlayed;
+	private Vector3 currentPosAfterBonus;
 	
 	#endregion
 	
@@ -307,6 +310,27 @@ public class RigPlayerMovement : MonoBehaviour
 	/// </summary>
 	void Start ()
 	{
+		reallyPlayed = AddObject.bonusLevelStarted;
+		//AddObject bonusRoom = obj.GetComponent<AddObject>();
+		if (reallyPlayed) {
+
+			GameObject[] names = GameObject.FindGameObjectsWithTag("bonusRoom");
+			//Destroy(GameObject.FindGameObjectsWithTag("bonusRoom"));
+			//Destroy(names);
+			
+			
+			foreach(GameObject item in names){
+				Debug.Log(item.ToString());
+				Destroy(item);
+			}
+
+			currentPosAfterBonus = HoldInformations.GetPugCurrentPos();
+			currentPosAfterBonus.x = currentPosAfterBonus.x - 10;
+			Debug.Log("currentPosAfterBonus " + currentPosAfterBonus);
+			GameObject.Find("NovaPug").transform.position = currentPosAfterBonus;
+
+		}
+
 		pug = GameObject.FindGameObjectWithTag ("fer");
 		shotpoint = GameObject.FindGameObjectWithTag ("shotpoint");
 	    audioSrc = GetComponent<AudioSource> ();

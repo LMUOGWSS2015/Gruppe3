@@ -27,7 +27,7 @@ public class BonusDoor : GazeMonobehaviour {
 		doorPoint [index].GetComponent<MeshRenderer>().enabled = true;
 	}
 
-	void Update(){
+	/*void Update(){
 		gazePosition = SMIGazeController.Instance.GetSample ().averagedEye.gazePosInUnityScreenCoords ();
 		rayGaze = Camera.main.ScreenPointToRay (gazePosition);
 
@@ -47,5 +47,5 @@ public class BonusDoor : GazeMonobehaviour {
 
 			}
 		}
-	}
+	}*/
 }

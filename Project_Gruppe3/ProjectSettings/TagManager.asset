@@ -25,6 +25,8 @@ TagManager:
   - wool
   - shotpoint
   - ToogleEyetracking
+  - bone
+  - bonusRoom
   layers:
   - Default
   - TransparentFX

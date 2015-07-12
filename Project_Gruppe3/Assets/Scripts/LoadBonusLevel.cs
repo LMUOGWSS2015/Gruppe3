@@ -23,10 +23,13 @@ public class LoadBonusLevel : MonoBehaviour {
 		// Enemy hits Player --> Player gettin hurt
 		if (col.gameObject.tag == "pug") {
 			//Debug.Log("NextLevel_Collision");
-			Destroy(gameObject);
+
+
 
 			Debug.Log(pugPosition);
-			Debug.Log("Life in level 1" + HoldInformations.GetLife());
+			HoldInformations.SetPugCurrentPos(pugPosition);
+
+			//Debug.Log("Life in level 1" + HoldInformations.GetLife());
 
 			Application.LoadLevel("BonusLevelNew");
 			

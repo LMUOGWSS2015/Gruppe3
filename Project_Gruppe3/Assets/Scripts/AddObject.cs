@@ -27,8 +27,16 @@ public class AddObject : GazeMonobehaviour {
 	public AudioSource audio;
 	public static int count;
 
+	//====================================
+	public static bool bonusLevelStarted = false;
+	//====================================
+
 	
 	void Start () {
+
+		//====================================
+		bonusLevelStarted = true;
+		//====================================
 		wonText.enabled = false;
 		timeLimit = 10.0f;
 		positions = new [] { new Vector3(-7f,14f,12f), new Vector3(0f,14f,12f),new Vector3(7f,14f,12f),
@@ -146,7 +154,8 @@ public class AddObject : GazeMonobehaviour {
 		}
 		else if(hasPlayed == true){
 			if(!audio.isPlaying){
-				Application.LoadLevel ("Level1");
+
+				Application.LoadLevel("Level1");
 			}
 
 		}
