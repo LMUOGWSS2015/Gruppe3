@@ -246,6 +246,7 @@ GameObject:
   - 224: {fileID: 52751783}
   - 222: {fileID: 52751785}
   - 114: {fileID: 52751784}
+  - 95: {fileID: 52751786}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -304,6 +305,23 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 52751782}
+--- !u!95 &52751786
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 52751782}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6fcce2d7ed2418043bc4ffbe467d1190, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &149111941
 GameObject:
   m_ObjectHideFlags: 0
@@ -1233,6 +1251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelectable: 1
+  temp: {x: 0, y: 0, z: 0}
   objectArray: []
   randomObject: {fileID: 0}
   timeLimit: 0
