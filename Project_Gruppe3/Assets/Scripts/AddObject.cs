@@ -29,6 +29,7 @@ public class AddObject : GazeMonobehaviour {
 
 	//====================================
 	public static bool bonusLevelStarted = false;
+	public int lifeTemp;
 	//====================================
 
 	
@@ -36,6 +37,8 @@ public class AddObject : GazeMonobehaviour {
 
 		//====================================
 		bonusLevelStarted = true;
+		lifeTemp = HoldInformations.GetLife();
+		tempHoldInfo = HoldInformations.GetLife();
 		//====================================
 		wonText.enabled = false;
 		timeLimit = 10.0f;
@@ -127,9 +130,15 @@ public class AddObject : GazeMonobehaviour {
 				hasPlayed = true;
 			}
 
-			tempHoldInfo = HoldInformations.GetLife();
-			tempHoldInfo = tempHoldInfo +1;
-			HoldInformations.SetLife(tempHoldInfo);
+			//=======================================
+			//tempHoldInfo = HoldInformations.GetLife();
+
+			if (lifeTemp == tempHoldInfo){
+				tempHoldInfo = tempHoldInfo +1;
+				Debug.Log("Life in bonusLevel " + tempHoldInfo);
+				HoldInformations.SetLife(tempHoldInfo);
+			}
+			//=======================================
 		
 		}
 		else if(randomObject.name == GetLightedGameObjectEyes() && (timeLimit >0)){

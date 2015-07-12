@@ -29,7 +29,7 @@ public class LoadBonusLevel : MonoBehaviour {
 			Debug.Log(pugPosition);
 			HoldInformations.SetPugCurrentPos(pugPosition);
 
-			//Debug.Log("Life in level 1" + HoldInformations.GetLife());
+			Debug.Log("Life in level 1 " + HoldInformations.GetLife());
 
 			Application.LoadLevel("BonusLevelNew");
 			

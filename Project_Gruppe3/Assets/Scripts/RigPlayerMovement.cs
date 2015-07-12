@@ -325,7 +325,7 @@ public class RigPlayerMovement : MonoBehaviour
 			}
 
 			currentPosAfterBonus = HoldInformations.GetPugCurrentPos();
-			currentPosAfterBonus.x = currentPosAfterBonus.x - 10;
+			currentPosAfterBonus.y = currentPosAfterBonus.y + 10;
 			Debug.Log("currentPosAfterBonus " + currentPosAfterBonus);
 			GameObject.Find("NovaPug").transform.position = currentPosAfterBonus;
 
