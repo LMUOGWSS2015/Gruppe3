@@ -8,6 +8,7 @@ public static class HoldInformations {
 	public static int level = 1;
 	public static int lifes = 3;
 	public static int scores = 0;
+	public static Vector3 pugCurrentPos;
 
 	#endregion
 
@@ -46,5 +47,15 @@ public static class HoldInformations {
 		return scores;
 	}
 
+
+	// GETTER + SETTER FOR PUGCURRENTPOS
+	public static void SetPugCurrentPos (Vector3 setCurrentPos){
+		pugCurrentPos = setCurrentPos;
+	}
+	
+	
+	public static Vector3 GetPugCurrentPos (){
+		return pugCurrentPos;
+	}
 	#endregion
 }
