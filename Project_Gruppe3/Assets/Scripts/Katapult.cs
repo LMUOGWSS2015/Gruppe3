@@ -4,12 +4,24 @@ using iView;
 
 public class Katapult : GazeMonobehaviour {
 	Rigidbody dogRB;
+	Rigidbody catapultArmRB;
 	float rotationSpeedMouse = 3f;
 	float rotationSpeedEyes = 0.01f;
+	GameObject dog;
+	GameObject catapultArm;
+	GameObject catapult;
+	Animator startCatapult;
 
 	// Use this for initialization
 	void Start () {
-		dogRB = GetComponent<Rigidbody> ();
+		dog = GameObject.Find ("NovaPugCatapultScene"); 
+		dogRB = dog.GetComponent<Rigidbody>(); 
+
+		catapultArm = GameObject.Find ("Catapuly/CatapultHeadHolder"); 
+		catapultArmRB = catapultArm.GetComponent<Rigidbody>(); 
+
+		catapult = GameObject.Find ("Catapuly"); 
+		startCatapult = catapult.GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -22,12 +34,16 @@ public class Katapult : GazeMonobehaviour {
 	public void jump (){
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			dogRB.AddForce (transform.forward * 300);
+			startCatapult.SetTrigger("JumpTrigger");
+			Debug.Log("JUMP");
 			dogRB.useGravity = false;
 		}
 	}
 
 	public void rotateMouse (){
 		dogRB.rotation = Quaternion.Euler(dogRB.rotation.eulerAngles + new Vector3(0f, rotationSpeedMouse* Input.GetAxis ("Mouse X"), 0f));
+	//	catapultArm.transform.Rotate= Quaternion.Euler(catapultArmRB.rotation.eulerAngles + new Vector3(0f, rotationSpeedMouse* Input.GetAxis ("Mouse X"), 0f));
+		//catapultArmRB.rotation = Quaternion.Euler(catapultArmRB.rotation.eulerAngles + new Vector3(0f, rotationSpeedMouse* Input.GetAxis ("Mouse X"), 0f));
 	}
 	//Eyetracking
 	public void rotateEyes (){
