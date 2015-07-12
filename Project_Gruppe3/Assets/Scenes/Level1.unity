@@ -2312,7 +2312,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.39999998, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 25
 --- !u!64 &70098975
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12973,7 +12973,7 @@ Transform:
   m_Children:
   - {fileID: 1496619290}
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 23
 --- !u!95 &365390334
 Animator:
   serializedVersion: 3
@@ -17977,14 +17977,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 551475412}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb205dc5160874fb6a3ec1efa669d528, type: 3}
+  m_Script: {fileID: 11500000, guid: 546c11f324c994d7eb73ef255b376743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedForTheThrowUp: 0
-  bounceSpeed: 0
-  bounce: 0
-  isJumping: 1
-  counter: 0
 --- !u!1001 &553474895
 Prefab:
   m_ObjectHideFlags: 0
@@ -23091,7 +23086,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 720939131}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb205dc5160874fb6a3ec1efa669d528, type: 3}
+  m_Script: {fileID: 11500000, guid: 20b7344782b7249de8d454e76381c57a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speedForTheThrowUp: 0
@@ -37763,14 +37758,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1105793725}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb205dc5160874fb6a3ec1efa669d528, type: 3}
+  m_Script: {fileID: 11500000, guid: 546c11f324c994d7eb73ef255b376743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedForTheThrowUp: 0
-  bounceSpeed: 0
-  bounce: 0
-  isJumping: 1
-  counter: 0
 --- !u!1001 &1106165856
 Prefab:
   m_ObjectHideFlags: 0
@@ -41806,7 +41796,7 @@ Transform:
   - {fileID: 208131656}
   - {fileID: 1504065596}
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 30
 --- !u!1001 &1201944367
 Prefab:
   m_ObjectHideFlags: 0
@@ -42657,14 +42647,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1230417764}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb205dc5160874fb6a3ec1efa669d528, type: 3}
+  m_Script: {fileID: 11500000, guid: 546c11f324c994d7eb73ef255b376743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedForTheThrowUp: 0
-  bounceSpeed: 0
-  bounce: 0
-  isJumping: 1
-  counter: 0
 --- !u!1001 &1234743032
 Prefab:
   m_ObjectHideFlags: 0
@@ -43447,14 +43432,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1250303378}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb205dc5160874fb6a3ec1efa669d528, type: 3}
+  m_Script: {fileID: 11500000, guid: 546c11f324c994d7eb73ef255b376743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedForTheThrowUp: 0
-  bounceSpeed: 0
-  bounce: 0
-  isJumping: 1
-  counter: 0
 --- !u!1 &1251211703
 GameObject:
   m_ObjectHideFlags: 0
@@ -43717,7 +43697,7 @@ Transform:
   - {fileID: 613543958}
   - {fileID: 572834883}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
 --- !u!4 &1253652246 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 5d510085e5cda244d9f372b0ccaff089, type: 2}
@@ -45492,7 +45472,7 @@ Transform:
   - {fileID: 662801745}
   - {fileID: 1744074346}
   m_Father: {fileID: 0}
-  m_RootOrder: 50
+  m_RootOrder: 49
 --- !u!1001 &1303940855
 Prefab:
   m_ObjectHideFlags: 0
@@ -45961,14 +45941,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1320141910}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb205dc5160874fb6a3ec1efa669d528, type: 3}
+  m_Script: {fileID: 11500000, guid: 546c11f324c994d7eb73ef255b376743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedForTheThrowUp: 0
-  bounceSpeed: 0
-  bounce: 0
-  isJumping: 1
-  counter: 0
 --- !u!1001 &1321136758
 Prefab:
   m_ObjectHideFlags: 0
@@ -48409,7 +48384,7 @@ Transform:
   - {fileID: 1223534952}
   - {fileID: 2026694337}
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 27
 --- !u!1001 &1391719431
 Prefab:
   m_ObjectHideFlags: 0
@@ -49485,7 +49460,7 @@ Transform:
   m_LocalScale: {x: 10, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!114 &1423648954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50534,14 +50509,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1465006863}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb205dc5160874fb6a3ec1efa669d528, type: 3}
+  m_Script: {fileID: 11500000, guid: 546c11f324c994d7eb73ef255b376743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedForTheThrowUp: 0
-  bounceSpeed: 0
-  bounce: 0
-  isJumping: 1
-  counter: 0
 --- !u!1001 &1465732428
 Prefab:
   m_ObjectHideFlags: 0
@@ -54230,14 +54200,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1565069508}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb205dc5160874fb6a3ec1efa669d528, type: 3}
+  m_Script: {fileID: 11500000, guid: 546c11f324c994d7eb73ef255b376743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedForTheThrowUp: 0
-  bounceSpeed: 0
-  bounce: 0
-  isJumping: 1
-  counter: 0
 --- !u!1001 &1566294707
 Prefab:
   m_ObjectHideFlags: 0
@@ -59447,14 +59412,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1690761108}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb205dc5160874fb6a3ec1efa669d528, type: 3}
+  m_Script: {fileID: 11500000, guid: 546c11f324c994d7eb73ef255b376743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedForTheThrowUp: 0
-  bounceSpeed: 0
-  bounce: 0
-  isJumping: 1
-  counter: 0
 --- !u!1001 &1691823309
 Prefab:
   m_ObjectHideFlags: 0
@@ -60210,14 +60170,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1713808970}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb205dc5160874fb6a3ec1efa669d528, type: 3}
+  m_Script: {fileID: 11500000, guid: 546c11f324c994d7eb73ef255b376743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedForTheThrowUp: 0
-  bounceSpeed: 2
-  bounce: 2
-  isJumping: 1
-  counter: 0
 --- !u!54 &1713808972
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -61497,7 +61452,7 @@ Transform:
   - {fileID: 32972201}
   - {fileID: 1380558686}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 20
 --- !u!1001 &1747520861
 Prefab:
   m_ObjectHideFlags: 0
@@ -66896,14 +66851,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1942917199}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb205dc5160874fb6a3ec1efa669d528, type: 3}
+  m_Script: {fileID: 11500000, guid: 546c11f324c994d7eb73ef255b376743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedForTheThrowUp: 0
-  bounceSpeed: 0
-  bounce: 0
-  isJumping: 1
-  counter: 0
 --- !u!1001 &1945442236
 Prefab:
   m_ObjectHideFlags: 0
@@ -73676,14 +73626,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2137447317}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb205dc5160874fb6a3ec1efa669d528, type: 3}
+  m_Script: {fileID: 11500000, guid: 546c11f324c994d7eb73ef255b376743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedForTheThrowUp: 0
-  bounceSpeed: 0
-  bounce: 0
-  isJumping: 1
-  counter: 0
 --- !u!1001 &2140614202
 Prefab:
   m_ObjectHideFlags: 0

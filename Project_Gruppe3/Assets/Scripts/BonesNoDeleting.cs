@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BonesWithoutDeleting : MonoBehaviour
+public class BonesNoDeleting : MonoBehaviour
 {
 	#region Variables (public)
 	
@@ -65,7 +65,7 @@ public class BonesWithoutDeleting : MonoBehaviour
 	#region Methods
 	
 	void MoveUpAndDown(){
-		Debug.Log (rigid.position.y);
+		//Debug.Log (rigid.position.y);
 		
 		float bounceY = rigid.position.y + bounce * Mathf.Sin (bounceSpeed * Time.deltaTime);
 		rigid.position = new Vector3 (rigid.position.x,
