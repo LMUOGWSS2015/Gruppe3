@@ -20,6 +20,6 @@ public class MenuManagerScript : MonoBehaviour {
 		}
 
 		Application.LoadLevel("Level1");
-		HoldInformations.SetLife (3);
+		HoldInformations.SetLife (10);
 	} 
 }
