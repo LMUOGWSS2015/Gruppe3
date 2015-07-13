@@ -11,11 +11,14 @@ public class Katapult : GazeMonobehaviour {
 	GameObject catapultArm;
 	GameObject catapult;
 	Animator startCatapult;
+	Animator startDogFly;
+
 
 	// Use this for initialization
 	void Start () {
 		dog = GameObject.Find ("NovaPugCatapultScene"); 
 		dogRB = dog.GetComponent<Rigidbody>(); 
+		startDogFly = dog.GetComponent<Animator>();
 
 		catapultArm = GameObject.Find ("Catapuly/CatapultHeadHolder"); 
 		catapultArmRB = catapultArm.GetComponent<Rigidbody>(); 
@@ -33,8 +36,9 @@ public class Katapult : GazeMonobehaviour {
 	//Eyetracking
 	public void jump (){
 		if (Input.GetKeyDown (KeyCode.Space)) {
-			dogRB.AddForce (transform.forward * 300);
 			startCatapult.SetTrigger("JumpTrigger");
+			startDogFly.SetTrigger("FlyTrigger");
+			//dogRB.AddForce (transform.forward * 400);
 			Debug.Log("JUMP");
 			dogRB.useGravity = false;
 		}
