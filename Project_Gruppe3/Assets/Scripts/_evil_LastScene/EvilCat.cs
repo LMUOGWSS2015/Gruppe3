@@ -29,7 +29,7 @@ public class EvilCat : MonoBehaviour
 	}
 	
 	protected void Update() {
-		if (EvilHealth.CurrentHealth < 5) {
+		if (EvilHealth.CurrentHealth <= 5) {
 			Debug.Log ("Evil Cat is Dead");
 			Destroy (this.gameObject);
 		} else if (!move.HasMoved) {

@@ -21,8 +21,8 @@ public class EvilHealth : MonoBehaviour{
 				//DontDestroyOnLoad(_instance.gameObject);
 
 				//let EvilCat live a little longer than the pug
-				SetMaxHealth (145);
-				SetCurrentHealth (145);
+				SetMaxHealth (105);
+				SetCurrentHealth (105);
 			}
 			
 			return _instance;
