@@ -6,7 +6,7 @@ public static class HoldInformations {
 	#region Variables (public)
 
 	public static int level = 1;
-	public static int lifes = 3;
+	public static int lifes = 10;
 	public static int scores = 0;
 	public static bool jump = false;
 	public static Vector3 pugCurrentPos;

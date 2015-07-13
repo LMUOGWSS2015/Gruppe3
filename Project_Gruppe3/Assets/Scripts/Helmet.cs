@@ -15,10 +15,4 @@ public class Helmet : MonoBehaviour
 		}
 	}
 
-	// Use this for initialization
-	void Start () 
-	{
-		//destroy object after x seconds
-		Destroy(this.gameObject, destroySeconds);
-	}
 }
