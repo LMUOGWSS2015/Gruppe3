@@ -12,7 +12,8 @@ public class Katapult : GazeMonobehaviour {
 	GameObject catapult;
 	Animator startCatapult;
 	Animator startDogFly;
-
+	Animation anim;
+	bool testBool= false;
 
 	// Use this for initialization
 	void Start () {
@@ -25,24 +26,35 @@ public class Katapult : GazeMonobehaviour {
 
 		catapult = GameObject.Find ("Catapuly"); 
 		startCatapult = catapult.GetComponent<Animator>();
+		anim = dog.GetComponent<Animation> ();
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		rotateMouse ();
 		jump ();
-
+		if (testBool) {
+			if (!anim.isPlaying) {
+				Debug.Log (anim.isPlaying);
+				dogRB.AddForce (transform.forward * 400);
+				dogRB.useGravity = false;
+			}
+		}
+		
 	}
 	//Eyetracking
 	public void jump (){
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			startCatapult.SetTrigger("JumpTrigger");
 			startDogFly.SetTrigger("FlyTrigger");
-			//dogRB.AddForce (transform.forward * 400);
 			Debug.Log("JUMP");
-			dogRB.useGravity = false;
+			testBool= true;
+
 		}
 	}
+
+
 
 	public void rotateMouse (){
 		dogRB.rotation = Quaternion.Euler(dogRB.rotation.eulerAngles + new Vector3(0f, rotationSpeedMouse* Input.GetAxis ("Mouse X"), 0f));

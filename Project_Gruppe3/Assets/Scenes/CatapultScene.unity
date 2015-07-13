@@ -1225,7 +1225,7 @@ Animation:
   - {fileID: 7400000, guid: f4e94fff044e27948a1983055cbd9654, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
+  m_AnimatePhysics: 1
   m_CullingType: 0
 --- !u!136 &460347504
 CapsuleCollider:
@@ -1251,7 +1251,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 9eb30d080d6c4f2448df20545a72a204, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -1585,7 +1585,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 526420420}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.0999999, y: 5.69999981, z: 40}
+  m_LocalPosition: {x: -6.0999999, y: 5.69999981, z: 29.6100006}
   m_LocalScale: {x: 131.251862, y: 37.3654594, z: .387500823}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3639,7 +3639,7 @@ Animation:
   - {fileID: 7400000, guid: 79ab379f61c58984e9fc0611e9226e01, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
+  m_AnimatePhysics: 1
   m_CullingType: 0
 --- !u!95 &1404667353
 Animator:
@@ -3652,7 +3652,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 929d69c36bbec144b9171e923a9356a0, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
