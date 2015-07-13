@@ -4,23 +4,22 @@ using System.Collections;
 public class HelmetSpawnManager : MonoBehaviour
 {
 
-#region Variables (public)
-		
-public GameObject Helmet;
-
-		
-#endregion
-		
-		
-#region Variables (private)
-		
-private GameObject pug;
-		
-#endregion
-		
-		
-#region Unity event functions
-		
+	#region Variables (public)
+			
+	public GameObject Helmet;
+	
+	#endregion
+			
+			
+	#region Variables (private)
+			
+	private GameObject pug;
+			
+	#endregion
+			
+			
+	#region Unity event functions
+			
 	void Update ()
 	{
 		// Get all Spawning Points
@@ -33,21 +32,21 @@ private GameObject pug;
 		}
 	}
 		
-		#endregion
+	#endregion
 		
 		
-		#region Methods
+	#region Methods
 		
 	void CreateHelmet ()
 	{
 			
 		// Creatin enemy infront of the player's view
 		Instantiate (Helmet, 
-			            pug.transform.position + pug.transform.forward * 30f,
-			            new Quaternion (0.0f, pug.transform.rotation.y, 0.0f, pug.transform.rotation.w));
+			         pug.transform.position + pug.transform.forward * 30f,
+			         new Quaternion (0.0f, pug.transform.rotation.y, 0.0f, pug.transform.rotation.w));
 	}
 		
-		#endregion
+	#endregion
 }
 	
 	

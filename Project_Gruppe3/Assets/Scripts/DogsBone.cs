@@ -39,19 +39,14 @@ public class DogsBone : MonoBehaviour
 	
 	// Update is called once per frame
 	void FixedUpdate () 
-		{
-			// add forward force to the bullet
-		//rigid.velocity = transform.up * speedForTheThrowUp;
-		//rigid.rotation = Quaternion.Euler(0.0f, 0.0f, 1F);
-
+	{
 		MoveUpAndDown ();
-		//Debug.Log (rigid.position.ToString ()+"aus klasse");
-
-		}
+	}
 		
-		void OnTriggerEnter(Collider coll)
+	void OnTriggerEnter(Collider coll)
+	{
+		if (coll.tag == "pug") 
 		{
-		if (coll.tag == "pug") {
 			Debug.Log("collectes");
 			// if bullet collides with anything, destroy it
 			Destroy (this.gameObject);
@@ -65,8 +60,8 @@ public class DogsBone : MonoBehaviour
 
 	#region Methods
 
-	void MoveUpAndDown(){
-		//Debug.Log (rigid.position.y);
+	void MoveUpAndDown()
+	{
 
 		float bounceY = rigid.position.y + bounce * Mathf.Sin (bounceSpeed * Time.deltaTime);
 		rigid.position = new Vector3 (rigid.position.x,
