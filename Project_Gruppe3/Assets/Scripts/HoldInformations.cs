@@ -8,12 +8,23 @@ public static class HoldInformations {
 	public static int level = 1;
 	public static int lifes = 3;
 	public static int scores = 0;
+	public static bool jump = false;
 	public static Vector3 pugCurrentPos;
 
 	#endregion
 
 
 	#region Methods
+	// GETTER + SETTER FOR Jump
+	public static void SetJump (bool setJump){
+		jump = setJump;
+	}
+	
+	
+	public static bool GetJump (){
+		return jump;
+	}
+
 
 	// GETTER + SETTER FOR LIFE
 	public static void SetLife (int setLife){

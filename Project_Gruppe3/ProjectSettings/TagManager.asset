@@ -27,6 +27,8 @@ TagManager:
   - ToogleEyetracking
   - bone
   - bonusRoom
+  - castle
+  - cat
   layers:
   - Default
   - TransparentFX

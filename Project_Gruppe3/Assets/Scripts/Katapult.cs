@@ -12,11 +12,14 @@ public class Katapult : GazeMonobehaviour {
 	GameObject catapult;
 	Animator startCatapult;
 	Animator startDogFly;
+	Animator startCatAnimator;
+
 	Animation anim;
 	bool testBool= false;
 	
 	// Use this for initialization
 	void Start () {
+		HoldInformations.SetJump (false);
 		dog = GameObject.Find ("NovaPugCatapultScene"); 
 		dogRB = dog.GetComponent<Rigidbody>(); 
 		startDogFly = dog.GetComponent<Animator>();
@@ -27,6 +30,8 @@ public class Katapult : GazeMonobehaviour {
 		catapult = GameObject.Find ("Catapuly"); 
 		startCatapult = catapult.GetComponent<Animator>();
 		anim = dog.GetComponent<Animation> ();
+
+		startCatAnimator= GameObject.Find ("AI CAT").GetComponent<Animator>(); 
 		
 	}
 	
@@ -36,7 +41,7 @@ public class Katapult : GazeMonobehaviour {
 		jump ();
 		if (testBool) {
 			if (!anim.isPlaying) {
-				Debug.Log (anim.isPlaying);
+//				Debug.Log (anim.isPlaying);
 				dogRB.AddForce (transform.forward * 400);
 				dogRB.useGravity = false;
 			}
@@ -48,8 +53,10 @@ public class Katapult : GazeMonobehaviour {
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			startCatapult.SetTrigger("JumpTrigger");
 			startDogFly.SetTrigger("FlyTrigger");
+			startCatAnimator.SetTrigger("StartCatTrigger");
 			Debug.Log("JUMP");
 			testBool= true;
+			HoldInformations.SetJump (true);
 			
 		}
 	}
