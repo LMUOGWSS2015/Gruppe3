@@ -67,6 +67,8 @@ GameObject:
   - 114: {fileID: 11451730}
   - 82: {fileID: 8201442}
   - 82: {fileID: 8244358}
+  - 114: {fileID: 11422086}
+  - 114: {fileID: 11445988}
   m_Layer: 0
   m_Name: NovaPug
   m_TagString: pug
@@ -604,6 +606,18 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 193636}
   m_Enabled: 1
+--- !u!114 &11422086
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 168766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d98a1f0453844ecb9f6c5132408dcdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  restartDelay: 3
 --- !u!114 &11445314
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -616,6 +630,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   restartDelay: 3
+--- !u!114 &11445988
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 168766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8ab70f1104f349d7a65aec6851ecbe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
 --- !u!114 &11451730
 MonoBehaviour:
   m_ObjectHideFlags: 1
