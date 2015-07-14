@@ -813,7 +813,7 @@ MonoBehaviour:
   runBackwardSpeed: 3
   sidestepSpeed: 6
   runSidestepSpeed: 6
-  maxVelocityChange: 5
+  maxVelocityChange: 1
   inAirControl: .100000001
   jumpHeight: 2
   canRunSidestep: 1

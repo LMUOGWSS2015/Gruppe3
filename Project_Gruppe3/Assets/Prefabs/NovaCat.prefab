@@ -49,7 +49,7 @@ GameObject:
   - 54: {fileID: 5451012}
   m_Layer: 5
   m_Name: NovaCat
-  m_TagString: Untagged
+  m_TagString: cat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

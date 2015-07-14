@@ -6,7 +6,8 @@ public class BallOfWool : MonoBehaviour {
 	#region Variables (private)
 
 	private AudioSource audio;
-
+	public AudioClip bams;
+	private Rigidbody rigid;
 	#endregion
 
 
@@ -14,20 +15,33 @@ public class BallOfWool : MonoBehaviour {
 
 	void Start(){
 
-		audio = GetComponent<AudioSource>();
+
+		rigid = GetComponent<Rigidbody> ();
+		//audio = GetComponent<AudioSource>();
 	}
+	#endregion
+
+
+	#region Variables (private)
+
 	
-	void OnCollisionEnter (Collision col){
-		
+	void OnTriggerEnter(Collider coll) {
+
 		// Enemy hits Player --> Player gettin hurt
-		if (GameObject.FindGameObjectWithTag("pug")){
+		if (coll.tag == "pug"){
+			//audio.clip = bams;
+
+			//audio.Play();
+
 			Debug.Log("-1 life");
 			//isHurt = true;
 			
 			//pugLife.DecreaseLife();
 			GameObject.FindGameObjectWithTag("fer").GetComponent<PugLife>().DecreaseLife();
+			//audio=GameObject.FindGameObjectWithTag("fer").GetComponent<AudioSource>();
 
-			audio.Play();
+
+			Destroy (this.gameObject);
 		}
 	}
 

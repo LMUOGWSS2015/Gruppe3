@@ -86,10 +86,10 @@ public class DetectCollision : MonoBehaviour {
 		GUI.skin.font = MyFont;
 		
 		if (timeLimit > 0) {
-			GUI.Label (new Rect (125, 25, 200, 100), "Time Remaining: " + (int)timeLimit);
+			GUI.Label (new Rect (125, 100, 200, 100), "Time Remaining: " + (int)timeLimit);
 			
 		}else {
-			GUI.Label(new Rect(125, 25, 100, 100), "Time is up!");
+			GUI.Label(new Rect(125, 100, 100, 100), "Time is up!");
 
 		}
 	}

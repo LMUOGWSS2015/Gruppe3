@@ -51,6 +51,8 @@ public class RigPlayerMovement : MonoBehaviour
 	public int helmet = 0;
     public AudioClip pew;
 	public AudioClip steam;
+	public AudioClip bams;
+	public AudioClip bone;
 	private AudioSource audioSrc;
 //	private AudioSource audioSrc2;
 
@@ -110,7 +112,7 @@ public class RigPlayerMovement : MonoBehaviour
 		//Rotate field of view
 		//++++++++++++++++++++ REPLACEMENT FOR EYETRACKING ++++++++++++++++++++
 		if (Input.GetAxis ("Mouse X") < 0 || Input.GetAxis ("Mouse X") >= 0) {
-			yRot += 10 * Input.GetAxis ("Mouse X");
+			yRot += 2 * Input.GetAxis ("Mouse X");
 		}
 		GetComponent<Rigidbody> ().rotation = Quaternion.Euler (0.0f, yRot, 0.0f);
 
@@ -262,6 +264,29 @@ public class RigPlayerMovement : MonoBehaviour
 	{
 		return transform.gameObject.isStatic;
 	}
+
+
+	void OnTriggerEnter(Collider coll) {
+		
+		// Enemy hits Player --> Player gettin hurt
+		if (coll.tag == "wool"){
+			audioSrc.clip = bams;
+			
+			audioSrc.Play();
+		}
+		if (coll.tag == "bone"){
+			audioSrc.clip = bone;
+			
+			audioSrc.Play();
+		}
+		if (coll.tag == "cat"){
+			audioSrc.clip = bams;
+			
+			audioSrc.Play();
+		}
+		
+	}
+
 
 	#endregion
 }

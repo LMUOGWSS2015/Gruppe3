@@ -66,8 +66,7 @@ public class Enemies : MonoBehaviour {
 			isHurt = true;
 
 			GameObject.FindGameObjectWithTag ("fer").GetComponent<PugLife>().DecreaseLife();
-
-			audio.Play();
+			Destroy (this.gameObject);
 		}
 		
 		// if Enemy collides with the Bullet (waterDrop), destroy it itself
